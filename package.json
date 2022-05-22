@@ -5,10 +5,12 @@
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
   "files": [
-    "lib"
+    "lib",
+    "plugin.js"
   ],
   "scripts": {
-    "build": "react-app-rewired build --profile",
+    "build:local": "react-app-rewired build --profile",
+    "build": "yarn build:lib:esm",
     "build:lib": "rimraf lib && yarn build:lib:esm && yarn build:lib:cjs",
     "build:lib:cjs": "tsc -p tsconfig.lib.json",
     "build:lib:esm": "tsc -p tsconfig.lib.json --module esnext --declaration --outDir lib/esm",
@@ -20,7 +22,7 @@
     "lint:staged": "lint-staged --config lint-staged.js",
     "prettier": "prettier --check {src,test,.storybook}/**/*.{js,jsx,ts,tsx,json,css,scss}",
     "prettier:fix": "prettier --write {src,test,.storybook}/**/*.{js,jsx,ts,tsx,json,css,scss}",
-    "prepare": "yarn build:lib:esm",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn build:lib",
     "release": "standard-version -a",
     "start": "react-app-rewired start",
@@ -28,7 +30,8 @@
     "test": "react-app-rewired test --color",
     "test:coverage": "CI=true react-app-rewired test --coverage --collectCoverageFrom='[\"src/lib/**/*.{ts,tsx}\",\"!src/lib/**/*.stories.{ts,tsx}\"]' --color",
     "test:e2e": "start-test 3000 cypress:run",
-    "test:e2e:open": "start-test 3000 cypress:open"
+    "test:e2e:open": "start-test 3000 cypress:open",
+    "watch": "watch 'yarn build' ./src"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^0.6.3",
