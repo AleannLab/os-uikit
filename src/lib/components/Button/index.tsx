@@ -12,7 +12,7 @@ type GradientDuoTone =
   | 'pinkToOrange'
   | 'tealToLime'
   | 'redToYellow';
-type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
 type PositionInGroup = 'start' | 'middle' | 'end';
 
 export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
@@ -28,15 +28,15 @@ export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
 };
 
 const colorClasses: Record<Color, string> = {
-  blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
+  blue: 'text-white bg-blue-600 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-800 flex w-full items-center justify-center rounded-md border border-transparent px-6 py-3 text-base font-medium shadow-sm',
   alternative:
     'text-gray-900 bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 disabled:hover:bg-white focus:ring-blue-700 focus:text-blue-700 dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-2 dark:disabled:hover:bg-gray-800',
-  dark: 'text-white bg-gray-800 border border-transparent hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 disabled:hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700 dark:disabled:hover:bg-gray-800',
+  dark: 'font-medium text-indigo-600 hover:text-indigo-500',
   light:
     'text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-white dark:bg-gray-600 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700',
   green:
     'text-white bg-green-700 border border-transparent hover:bg-green-800 focus:ring-4 focus:ring-green-300 disabled:hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 dark:disabled:hover:bg-green-600',
-  red: 'text-white bg-red-700 border border-transparent hover:bg-red-800 focus:ring-4 focus:ring-red-300 disabled:hover:bg-red-800 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 dark:disabled:hover:bg-red-600',
+  red: 'relative w-20 h-30 text-blue-600 bg-white p-0 flex flex-col justify-center justify-items-center items-center text-black bg-white border-none p-0',
   yellow:
     'text-white bg-yellow-400 border border-transparent hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 disabled:hover:bg-yellow-400 dark:focus:ring-yellow-900 dark:disabled:hover:bg-yellow-400',
   purple:
@@ -74,6 +74,7 @@ const gradientDuoToneClasses: Record<GradientDuoTone, string> = {
 };
 
 const sizeClasses: Record<Size, string> = {
+  none: 'text-xs p-0',
   xs: 'text-xs px-2 py-1',
   sm: 'text-sm px-3 py-1.5',
   md: 'text-sm px-4 py-2',
@@ -82,6 +83,7 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const iconSizeClasses: Record<Size, string> = {
+  none: '!px-0',
   xs: '!px-1',
   sm: '!px-1.5',
   md: '!px-2',
@@ -96,7 +98,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
   pill,
   outline,
   disabled = false,
-  size = 'md',
+  size = 'none',
   icon: Icon,
   color = 'blue',
   gradientMonochrome,
@@ -108,7 +110,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={disabled}
     className={classNames(
-      'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
+      'group flex h-min items-center justify-center p-0.5 text-center font-medium focus:z-10',
       pill ? 'rounded-full' : 'rounded-lg',
       !gradientMonochrome && !gradientDuoTone && colorClasses[color],
       !gradientDuoTone && gradientMonochrome && gradientMonochromeClasses[gradientMonochrome],
@@ -141,11 +143,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
       ) : (
         <>
           {children}
-          {label && (
-            <span className="ml-2 inline-flex h-4 w-4 items-center justify-center rounded-full bg-blue-200 text-xs font-semibold text-blue-800">
-              {label}
-            </span>
-          )}
+          {label}
         </>
       )}
     </span>
