@@ -124,5 +124,6 @@
     "flowbite",
     "flowbite-react",
     "flowbite-react-components"
-  ]
+  ],
+  "homepage": "https://storage.cloud.google.com/react-app-onlysky/os-uikit/build/"
 }
