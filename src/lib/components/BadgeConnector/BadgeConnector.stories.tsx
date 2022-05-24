@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 const Template: Story<BadgeConnectorProps> = (args) => (
-  <div className="flex items-center">
+  <div className="flex w-80 items-center">
     <BadgeConnector {...args} />
   </div>
 );
