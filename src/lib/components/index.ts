@@ -3,6 +3,7 @@ export * from './Accordion';
 export * from './Avatar';
 export * from './Badge';
 export * from './BadgeConnector';
+export * from './BadgeLabel';
 export * from './Breadcrumb';
 export * from './Button';
 export * from './Card';
