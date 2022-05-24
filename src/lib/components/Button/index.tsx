@@ -80,7 +80,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
   full,
   ptx = 'center',
   pty = 'center',
-  positionInGroup = 'none',
+  positionInGroup = 'normal',
   type = 'button',
   ...props
 }) => (
@@ -88,7 +88,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={disabled}
     className={classNames(
-      'flex cursor-pointer outline-none',
+      'flex cursor-pointer !outline-none',
       positionTextY[pty],
       positionTextX[ptx],
       buttonBorderClasses[positionInGroup],
