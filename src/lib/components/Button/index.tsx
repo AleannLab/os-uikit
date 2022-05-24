@@ -4,7 +4,7 @@ import ButtonGroup from './ButtonGroup';
 
 type Color = 'blue' | 'gray' | 'transparent';
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-type PositionInGroup = 'start' | 'middle' | 'end' | 'none';
+type PositionInGroup = 'start' | 'middle' | 'end' | 'normal';
 type PositionText = 'start' | 'center' | 'end';
 
 export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
@@ -65,7 +65,7 @@ const buttonBorderClasses: Record<PositionInGroup, string> = {
   start: 'rounded-r-none',
   middle: '!rounded-none border-l-0 pl-0',
   end: 'rounded-l-none border-l-0 pl-0',
-  none: 'rounded',
+  normal: 'rounded-lg',
 };
 
 const ButtonComponent: FC<ButtonComponentProps> = ({
@@ -88,7 +88,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={disabled}
     className={classNames(
-      'flex cursor-pointer focus-visible:border-0 ',
+      'flex cursor-pointer outline-none',
       positionTextY[pty],
       positionTextX[ptx],
       buttonBorderClasses[positionInGroup],
