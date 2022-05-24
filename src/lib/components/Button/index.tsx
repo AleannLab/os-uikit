@@ -26,7 +26,7 @@ const colorClasses: Record<Color, string> = {
 };
 
 const ringClasses: Record<Color, string> = {
-  blue: 'text-blue-600 bg-white border-blue-800  border-4 hover:bg-blue-800 hover:text-white ',
+  blue: 'text-blue-600 text-base font-medium bg-white border-blue-600 border-2 hover:bg-blue-600 hover:text-white ',
   gray: 'text-black bg-white border-gray-700 border hover:bg-gray-700 hover:text-white',
   transparent: 'text-black bg-white border-black-700 border hover:bg-black-700 hover:text-white',
 };
@@ -71,7 +71,7 @@ const buttonBorderClasses: Record<PositionInGroup, string> = {
 const ButtonComponent: FC<ButtonComponentProps> = ({
   children,
   className,
-  pill = true,
+  pill = false,
   ring = false,
   disabled = false,
   size = 'sm',
@@ -88,14 +88,14 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={disabled}
     className={classNames(
-      'flex cursor-pointer  focus-visible:border-0 ',
-      colorClasses[color],
+      'flex cursor-pointer focus-visible:border-0 ',
       positionTextY[pty],
       positionTextX[ptx],
       buttonBorderClasses[positionInGroup],
       pill ? 'rounded-full' : 'rounded-lg',
       full ? 'w-full' : 'w-fit',
       {
+        [colorClasses[color]]: color && !ring,
         [ringClasses[color]]: color && ring,
         'cursor-not-allowed opacity-50': disabled,
       },
@@ -111,7 +111,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
         '!rounded-none': positionInGroup === 'middle',
         'rounded-l-none': positionInGroup === 'end',
         [iconSizeClasses[size]]: !!Icon,
-      })}
+      }, className)}
     >
       {Icon ? (<Icon className="h-5 w-5" />) : (<>{children}</>)}
     </span>
