@@ -1,7 +1,7 @@
 import { ComponentProps, FC, PropsWithChildren } from 'react';
 import classNames from 'classnames';
 
-export type BadgeColor = 'blue' | 'gray';
+export type BadgeColor = 'blue' | 'red' | 'green' | 'yellow' | 'gray' | 'indigo' | 'purple' | 'pink';
 
 export type BadgeProps = PropsWithChildren<{
   color?: BadgeColor;
@@ -15,6 +15,16 @@ export type BadgeProps = PropsWithChildren<{
 const colorClasses: Record<BadgeProps['color'] & string, string> = {
   blue: 'bg-blue-500 text-white',
   gray: 'bg-gray-200 text-gray-500',
+  red: 'bg-red-100 text-red-800 dark:bg-red-200 dark:text-red-900 group-hover:bg-red-200 dark:group-hover:bg-red-300',
+  green:
+    'bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900 group-hover:bg-green-200 dark:group-hover:bg-green-300',
+  yellow:
+    'bg-yellow-100 text-yellow-800 dark:bg-yellow-200 dark:text-yellow-900 group-hover:bg-yellow-200 dark:group-hover:bg-yellow-300',
+  indigo:
+    'bg-indigo-100 text-indigo-800 dark:bg-indigo-200 dark:text-indigo-900 group-hover:bg-indigo-200 dark:group-hover:bg-indigo-300',
+  purple:
+    'bg-purple-100 text-purple-800 dark:bg-purple-200 dark:text-purple-900 group-hover:bg-purple-200 dark:group-hover:bg-purple-300',
+  pink: 'bg-pink-100 text-pink-800 dark:bg-pink-200 dark:text-pink-900 group-hover:bg-pink-200 dark:group-hover:bg-pink-300',
 };
 
 const sizeClasses: Record<BadgeProps['size'] & string, string> = {
