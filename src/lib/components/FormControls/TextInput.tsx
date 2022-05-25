@@ -19,8 +19,7 @@ export type TextInputProps = ComponentProps<'input'> & {
 
 const colorClasses: Record<Color, { input: string; helperText: string }> = {
   base: {
-    input:
-      'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
+    input: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
     helperText: 'text-gray-500 dark:text-gray-400',
   },
   dark: {
@@ -57,7 +56,7 @@ export const TextInput: FC<TextInputProps> = ({
   ...props
 }) => (
   <>
-    <div className="relative tex w-full flex justify-center items-center">
+    <div className="tex relative flex w-full items-center justify-center">
       {Icon && (
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
           <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
@@ -65,7 +64,7 @@ export const TextInput: FC<TextInputProps> = ({
       )}
       <input
         className={classNames(
-          'block  border text-base font-normal rounded outline-none disabled:cursor-not-allowed disabled:opacity-50',
+          'block  rounded border text-base font-normal outline-none disabled:cursor-not-allowed disabled:opacity-50',
           colorClasses[color].input,
           sizeClasses[sizing],
           inputBorderClasses[position],
