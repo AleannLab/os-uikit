@@ -24,12 +24,7 @@ export const BadgeConnector = ({ color = 'blue', size = 'xs', className, show = 
     <>
       {show && (
         <div
-          className={classNames(
-            'flex items-center justify-center',
-            colorClasses[color],
-            sizeClasses[size],
-            className,
-          )}
+          className={classNames('flex items-center justify-center', colorClasses[color], sizeClasses[size], className)}
         />
       )}
     </>
