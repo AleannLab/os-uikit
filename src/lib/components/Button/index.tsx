@@ -105,15 +105,22 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     {...props}
   >
     <span
-      className={classNames('flex cursor-pointer', sizeClasses[size], pill ? 'rounded-full' : 'rounded-md', positionTextY[pty], positionTextX[ptx], 
-      {
-        'rounded-r-none': positionInGroup === 'start',
-        '!rounded-none': positionInGroup === 'middle',
-        'rounded-l-none': positionInGroup === 'end',
-        [iconSizeClasses[size]]: !!Icon,
-      }, className)}
+      className={classNames(
+        'flex cursor-pointer',
+        sizeClasses[size],
+        pill ? 'rounded-full' : 'rounded-md',
+        positionTextY[pty],
+        positionTextX[ptx],
+        {
+          'rounded-r-none': positionInGroup === 'start',
+          '!rounded-none': positionInGroup === 'middle',
+          'rounded-l-none': positionInGroup === 'end',
+          [iconSizeClasses[size]]: !!Icon,
+        },
+        className,
+      )}
     >
-      {Icon ? (<Icon className="h-5 w-5" />) : (<>{children}</>)}
+      {Icon ? <Icon className="h-5 w-5" /> : <>{children}</>}
     </span>
   </button>
 );
