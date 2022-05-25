@@ -42,7 +42,7 @@ describe('Button Component', () => {
   });
 
   it('should be able to render a button with a label', () => {
-    const { getByTestId } = render(<Button  />);
+    const { getByTestId } = render(<Button />);
     expect(getByTestId('button-element').children[0].children[0].innerHTML).toEqual('this-is-a-label');
   });
 
