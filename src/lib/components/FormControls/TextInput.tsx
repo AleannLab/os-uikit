@@ -20,12 +20,12 @@ export type TextInputProps = ComponentProps<'input'> & {
 const colorClasses: Record<Color, { input: string; helperText: string }> = {
   base: {
     input: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
-    helperText: 'text-gray-500 dark:text-gray-400',
+    helperText: 'text-red-600 dark:text-red-600',
   },
   dark: {
     input:
       'bg-white border-black-200 text-black-900 placeholder-black-700 focus:border-gray-900 focus-visible:border-gray-900',
-    helperText: 'text-green-600 dark:text-green-500',
+    helperText: 'text-red-600 dark:text-red-600',
   },
 };
 
@@ -59,7 +59,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
     },
     ref,
   ) => (
-    <>
+    <div className="relative flex w-full flex-col">
       <div className="relative flex w-full items-center justify-center">
         {Icon && (
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -84,7 +84,9 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
         />
         {element}
       </div>
-      {helperText && <p className={classNames('mt-1 text-sm', colorClasses[color].helperText)}>{helperText}</p>}
-    </>
+      {helperText && (
+        <p className={classNames('absolute -bottom-4 text-xs', colorClasses[color].helperText)}>{helperText}</p>
+      )}
+    </div>
   ),
 );
