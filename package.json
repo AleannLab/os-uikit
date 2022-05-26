@@ -31,8 +31,8 @@
     "test:coverage": "CI=true react-app-rewired test --coverage --collectCoverageFrom='[\"src/lib/**/*.{ts,tsx}\",\"!src/lib/**/*.stories.{ts,tsx}\"]' --color",
     "test:e2e": "start-test 3000 cypress:run",
     "test:e2e:open": "start-test 3000 cypress:open",
-    "deploy": "sh deploy.sh",
     "watch": "watch \"yarn build\" ./src"
+    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^0.6.3",
