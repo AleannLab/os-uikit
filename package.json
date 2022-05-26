@@ -31,7 +31,7 @@
     "test:e2e": "start-test 3000 cypress:run",
     "test:e2e:open": "start-test 3000 cypress:open",
     "deploy": "sh deploy.sh",
-    "yacl": "yacl",
+    "yalc": "yalc",
     "watch": "watch \"npm --no-git-tag-version version patch && yalc publish && yalc push\" ./src"
   },
   "dependencies": {
