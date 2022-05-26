@@ -18,7 +18,7 @@ export type SelectProps = ComponentProps<'select'> & {
 const colorClasses: Record<Color, { select: string; helperText: string }> = {
   base: {
     select: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
-    helperText: 'text-gray-500 dark:text-gray-400',
+    helperText: 'text-red-600 dark:text-red-600',
   },
   green: {
     select:
@@ -82,7 +82,9 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         >
           {children}
         </select>
-        {helperText && <p className={classNames('mt-2 text-sm', colorClasses[color].helperText)}>{helperText}</p>}
+        {helperText && (
+          <p className={classNames('absolute -bottom-4 text-xs', colorClasses[color].helperText)}>{helperText}</p>
+        )}
       </div>
     </>
   ),
