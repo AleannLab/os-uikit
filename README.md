@@ -12,5 +12,16 @@ In parent project run:
 ### `yarn link os-uikit`
 
 
+Version 2:
+https://github.com/wclr/yalc
+
+### `yarn global add yalc`
+
+In parent project(frontend) run:
+### `yalc add os-uikit`
+
+Run in os-uikit
+### `yarn watch`
+
 Now you can change uikit components and see changes in you parent project.
  

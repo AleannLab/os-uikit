@@ -23,7 +23,6 @@
     "prettier": "prettier --check {src,test,.storybook}/**/*.{js,jsx,ts,tsx,json,css,scss}",
     "prettier:fix": "prettier --write {src,test,.storybook}/**/*.{js,jsx,ts,tsx,json,css,scss}",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn build:lib",
     "release": "standard-version -a",
     "start": "react-app-rewired start",
     "start:storybook": "start-storybook -p 6006",
@@ -31,8 +30,9 @@
     "test:coverage": "CI=true react-app-rewired test --coverage --collectCoverageFrom='[\"src/lib/**/*.{ts,tsx}\",\"!src/lib/**/*.stories.{ts,tsx}\"]' --color",
     "test:e2e": "start-test 3000 cypress:run",
     "test:e2e:open": "start-test 3000 cypress:open",
-    "watch": "watch \"yarn build\" ./src",
-    "deploy": "sh deploy.sh"
+    "deploy": "sh deploy.sh",
+    "yalc": "yalc",
+    "watch": "watch \"npm --no-git-tag-version version patch && yarn yalc publish && yarn yalc push\" ./src"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^0.6.3",
