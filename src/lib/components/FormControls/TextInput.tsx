@@ -43,7 +43,7 @@ const sizeClasses: Record<Size, string> = {
   lg: 'p-4 text-lg',
 };
 
-export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
+export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       className,
