@@ -19,7 +19,7 @@ export type TextInputProps = ComponentProps<'input'> & {
 
 const colorClasses: Record<Color, { input: string; helperText: string }> = {
   base: {
-    input: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
+    input: 'bg-white border-gray-200 text-gray-900 placeholder-gray-700 focus:border-blue-600',
     helperText: 'text-gray-500 dark:text-gray-400',
   },
   dark: {
@@ -64,7 +64,7 @@ export const TextInput: FC<TextInputProps> = ({
       )}
       <input
         className={classNames(
-          'block  rounded border text-base font-normal outline-none disabled:cursor-not-allowed disabled:opacity-50',
+          'block rounded border text-base font-normal outline-none disabled:cursor-not-allowed disabled:opacity-50',
           colorClasses[color].input,
           sizeClasses[sizing],
           inputBorderClasses[position],
