@@ -23,7 +23,7 @@ DefaultBadge.args = {
 export const BadgeWithIcon = Template.bind({});
 BadgeWithIcon.storyName = 'With icon';
 BadgeWithIcon.args = {
-  color: 'indigo',
+  color: 'blue',
   icon: HiCheck,
   children: '2 minutes ago',
 };
@@ -31,7 +31,7 @@ BadgeWithIcon.args = {
 export const BadgeOnlyIcon = Template.bind({});
 BadgeOnlyIcon.storyName = 'Only icon';
 BadgeOnlyIcon.args = {
-  color: 'green',
+  color: 'gray',
   icon: HiCheck,
 };
 
@@ -40,4 +40,13 @@ BadgeAsLink.storyName = 'As link';
 BadgeAsLink.args = {
   href: '/badges',
   children: 'Read more →',
+};
+
+export const BadgeAsCircle = Template.bind({});
+BadgeAsCircle.storyName = 'As circle';
+BadgeAsCircle.args = {
+  href: '',
+  color: 'blue',
+  shape: 'circle',
+  children: '1',
 };

@@ -1,0 +1,8 @@
+{
+  "version": "v1",
+  "packages": {
+    "os-uikit": {
+      "signature": "7ae6a7808c1cc206b009cc50bb0aa6b6"
+    }
+  }
+}
