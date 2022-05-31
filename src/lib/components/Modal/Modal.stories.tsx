@@ -43,7 +43,7 @@ Default.args = {
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={action('close')}>I accept</Button>
-        <Button color="alternative" onClick={action('close')}>
+        <Button color="blue" onClick={action('close')}>
           Decline
         </Button>
       </Modal.Footer>
@@ -61,10 +61,10 @@ PopUp.args = {
         Are you sure you want to delete this product?
       </h3>
       <div className="flex justify-center gap-4">
-        <Button color="red" onClick={action('close')}>
+        <Button color="gray" onClick={action('close')}>
           {"Yes, I'm sure"}
         </Button>
-        <Button color="alternative" onClick={action('close')}>
+        <Button color="blue" onClick={action('close')}>
           No, cancel
         </Button>
       </div>
