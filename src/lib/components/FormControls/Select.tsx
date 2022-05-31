@@ -41,7 +41,7 @@ const sizeClasses: Record<Size, string> = {
   lg: 'p-4 text-lg',
 };
 
-export const Select = forwardRef<HTMLSelectElement, SelectProps>(
+export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
   (
     {
       children,
