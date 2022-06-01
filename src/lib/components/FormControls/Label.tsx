@@ -7,6 +7,7 @@ export type LabelProps = ComponentProps<'label'> & {
   color?: Color;
   isRequired?: boolean;
   isUp?: boolean;
+  text?: string;
 };
 
 const colorClasses: Record<Color, string> = {
@@ -15,9 +16,18 @@ const colorClasses: Record<Color, string> = {
   red: 'text-red-700 dark:text-red-500',
 };
 
-export const Label: FC<LabelProps> = ({ children, color = 'gray', className, isUp = false, isRequired, ...props }) => (
-  <label className={classNames('text-sm', colorClasses[color], className, {'uppercase': isUp})} {...props}>
+export const Label: FC<LabelProps> = ({
+  children,
+  text,
+  color = 'gray',
+  className,
+  isUp = false,
+  isRequired,
+  ...props
+}) => (
+  <label className={classNames('text-sm', colorClasses[color], className, { ['uppercase']: isUp })} {...props}>
+    {text}
+    {isRequired && <span className="ml-1 inline-flex align-middle text-red-600">*</span>}
     {children}
-    { isRequired && <span className="inline-flex align-middle ml-1 text-red-600">*</span>}
   </label>
 );
