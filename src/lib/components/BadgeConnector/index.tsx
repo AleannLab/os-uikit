@@ -10,7 +10,7 @@ export type BadgeConnectorProps = {
 };
 
 const colorClasses: Record<BadgeConnectorProps['color'] & string, string> = {
-  blue: 'bg-blue-600 text-white',
+  blue: 'bg-blue-500 text-white',
   gray: 'bg-gray-200 text-gray-500',
 };
 
