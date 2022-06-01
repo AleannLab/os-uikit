@@ -10,16 +10,16 @@ export type BadgeConnectorProps = {
 };
 
 const colorClasses: Record<BadgeConnectorProps['color'] & string, string> = {
-  blue: 'bg-blue-500 text-white',
-  gray: 'bg-gray-200 text-gray-500',
+  blue: 'border-blue-500',
+  gray: 'border-gray-200',
 };
 
 const sizeClasses: Record<BadgeConnectorProps['size'] & string, string> = {
-  xs: 'w-full h-3',
-  sm: 'w-full h-5',
+  xs: 'border-4',
+  sm: 'border-8',
 };
 
-export const BadgeConnector = ({ color = 'blue', size = 'xs', className, show = true }: BadgeConnectorProps) => {
+export const BadgeConnector = ({ color = 'blue', size = 'sm', className, show = true }: BadgeConnectorProps) => {
   return (
     <>
       {show && (
