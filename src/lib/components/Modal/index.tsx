@@ -18,6 +18,8 @@ export type ModalProps = PropsWithChildren<{
   root?: HTMLElement;
   show?: boolean;
   size?: Size;
+  rounded?: boolean;
+  indent?: boolean;
 }>;
 
 const sizeClasses: Record<Size, string> = {
@@ -52,6 +54,8 @@ const ModalComponent: FC<ModalProps> = ({
   popup,
   size = '2xl',
   placement = 'center',
+  rounded = true,
+  indent = true,
   onClose,
 }): JSX.Element | null => {
   const [container] = useState<HTMLDivElement | undefined>(windowExists() ? document.createElement('div') : undefined);
@@ -83,8 +87,10 @@ const ModalComponent: FC<ModalProps> = ({
             )}
             data-testid="modal"
           >
-            <div className={classNames('relative h-full w-full p-4 md:h-auto', sizeClasses[size])}>
-              <div className="relative rounded-lg bg-white shadow dark:bg-gray-700">{children}</div>
+            <div className={classNames('relative h-full w-full md:h-auto', { 'p-4': indent }, sizeClasses[size])}>
+              <div className={classNames('relative bg-white shadow dark:bg-gray-700', { 'rounded-lg': rounded })}>
+                {children}
+              </div>
             </div>
           </div>
         </ModalContext.Provider>,
