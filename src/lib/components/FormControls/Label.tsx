@@ -25,7 +25,7 @@ export const Label: FC<LabelProps> = ({
   isRequired,
   ...props
 }) => (
-  <label className={classNames('text-sm', colorClasses[color], className, { 'uppercase': isUp })} {...props}>
+  <label className={classNames('text-sm', colorClasses[color], className, { ['uppercase']: isUp })} {...props}>
     {text}
     {isRequired && <span className="ml-1 inline-flex align-middle text-red-600">*</span>}
     {children}
