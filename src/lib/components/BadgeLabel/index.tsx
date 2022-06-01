@@ -10,7 +10,7 @@ type BadgeLabelProperty = {
 };
 
 const colorClasses: Record<BadgeLabelProperty['color'] & string, string> = {
-  blue: 'text-blue-600',
+  blue: 'text-blue-500',
   gray: 'text-gray-500',
 };
 
