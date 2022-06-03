@@ -94,8 +94,13 @@ const ModalComponent: FC<ModalProps> = ({
             )}
             data-testid="modal"
           >
-            <div className={classNames('relative h-full w-full md:h-auto', { 'p-4': indent }, sizeClasses[size])}>
-              <div className={classNames('relative bg-white shadow dark:bg-gray-700', { 'rounded-lg': rounded })}>
+            <div className={classNames('relative h-full w-full', { 'p-4 md:h-auto': indent }, sizeClasses[size])}>
+              <div
+                className={classNames('relative bg-white shadow dark:bg-gray-700', {
+                  'rounded-lg': rounded,
+                  'h-full': !rounded,
+                })}
+              >
                 {children}
               </div>
             </div>
