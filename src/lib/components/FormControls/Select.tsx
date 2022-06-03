@@ -83,7 +83,9 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
           {children}
         </select>
         {helperText && (
-          <p className={classNames('absolute left-0 -bottom-4 text-xs', colorClasses[color].helperText)}>{helperText}</p>
+          <p className={classNames('absolute left-0 -bottom-4 text-xs', colorClasses[color].helperText)}>
+            {helperText}
+          </p>
         )}
       </div>
     </>

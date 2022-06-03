@@ -10,9 +10,9 @@ const ButtonGroupPage: FC = () => {
       title: 'Default example',
       code: (
         <Button.Group>
-          <Button color="alternative">Profile</Button>
-          <Button color="alternative">Settings</Button>
-          <Button color="alternative">Messages</Button>
+          <Button color="blue">Profile</Button>
+          <Button color="blue">Settings</Button>
+          <Button color="blue">Messages</Button>
         </Button.Group>
       ),
     },
@@ -20,13 +20,13 @@ const ButtonGroupPage: FC = () => {
       title: 'Group buttons with icons',
       code: (
         <Button.Group>
-          <Button color="alternative">
+          <Button color="blue">
             <HiUserCircle className="mr-3 h-4 w-4" /> Profile
           </Button>
-          <Button color="alternative">
+          <Button color="blue">
             <HiAdjustments className="mr-3 h-4 w-4" /> Settings
           </Button>
-          <Button color="alternative">
+          <Button color="blue">
             <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
           </Button>
         </Button.Group>
@@ -42,74 +42,74 @@ const ButtonGroupPage: FC = () => {
             <Button color="blue">Messages</Button>
           </Button.Group>
           <Button.Group>
-            <Button gradientMonochrome="blue">Profile</Button>
-            <Button gradientMonochrome="blue">Settings</Button>
-            <Button gradientMonochrome="blue">Messages</Button>
+            <Button color="blue">Profile</Button>
+            <Button color="blue">Settings</Button>
+            <Button color="blue">Messages</Button>
           </Button.Group>
           <Button.Group>
-            <Button gradientDuoTone="greenToBlue">Profile</Button>
-            <Button gradientDuoTone="greenToBlue">Settings</Button>
-            <Button gradientDuoTone="greenToBlue">Messages</Button>
+            <Button color="lightGreen">Profile</Button>
+            <Button color="lightGreen">Settings</Button>
+            <Button color="lightGreen">Messages</Button>
           </Button.Group>
         </div>
       ),
     },
     {
-      title: 'Outline',
+      title: 'pill',
       code: (
         <div className="flex flex-wrap gap-2">
-          <Button.Group outline>
-            <Button color="alternative">Profile</Button>
-            <Button color="alternative">Settings</Button>
-            <Button color="alternative">Messages</Button>
+          <Button.Group pill={true}>
+            <Button color="blue">Profile</Button>
+            <Button color="blue">Settings</Button>
+            <Button color="blue">Messages</Button>
           </Button.Group>
-          <Button.Group outline>
-            <Button gradientMonochrome="blue">Profile</Button>
-            <Button gradientMonochrome="blue">Settings</Button>
-            <Button gradientMonochrome="blue">Messages</Button>
+          <Button.Group pill={true}>
+            <Button color="blue">Profile</Button>
+            <Button color="blue">Settings</Button>
+            <Button color="blue">Messages</Button>
           </Button.Group>
-          <Button.Group outline>
-            <Button gradientDuoTone="cyanToBlue">Profile</Button>
-            <Button gradientDuoTone="cyanToBlue">Settings</Button>
-            <Button gradientDuoTone="cyanToBlue">Messages</Button>
+          <Button.Group pill={true}>
+            <Button color="gray">Profile</Button>
+            <Button color="gray">Settings</Button>
+            <Button color="gray">Messages</Button>
           </Button.Group>
         </div>
       ),
     },
     {
-      title: 'Outline with icons',
+      title: 'pill with icons',
       code: (
         <div className="flex flex-wrap gap-2">
-          <Button.Group outline>
-            <Button color="alternative">
+          <Button.Group pill={true}>
+            <Button color="blue">
               <HiUserCircle className="mr-3 h-4 w-4" /> Profile
             </Button>
-            <Button color="alternative">
+            <Button color="blue">
               <HiAdjustments className="mr-3 h-4 w-4" /> Settings
             </Button>
-            <Button color="alternative">
+            <Button color="blue">
               <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
             </Button>
           </Button.Group>
-          <Button.Group outline>
-            <Button gradientMonochrome="blue">
+          <Button.Group pill={true}>
+            <Button color="blue">
               <HiUserCircle className="mr-3 h-4 w-4" /> Profile
             </Button>
-            <Button gradientMonochrome="blue">
+            <Button color="blue">
               <HiAdjustments className="mr-3 h-4 w-4" /> Settings
             </Button>
-            <Button gradientMonochrome="blue">
+            <Button color="blue">
               <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
             </Button>
           </Button.Group>
-          <Button.Group outline>
-            <Button gradientDuoTone="cyanToBlue">
+          <Button.Group pill={true}>
+            <Button color="gray">
               <HiUserCircle className="mr-3 h-4 w-4" /> Profile
             </Button>
-            <Button gradientDuoTone="cyanToBlue">
+            <Button color="gray">
               <HiAdjustments className="mr-3 h-4 w-4" /> Settings
             </Button>
-            <Button gradientDuoTone="cyanToBlue">
+            <Button color="gray">
               <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
             </Button>
           </Button.Group>
