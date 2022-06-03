@@ -17,7 +17,7 @@ export type SelectProps = ComponentProps<'select'> & {
 
 const colorClasses: Record<Color, { select: string; helperText: string }> = {
   base: {
-    select: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
+    select: 'bg-white border-gray-200 text-gray-900 placeholder-gray-700 focus:border-blue-600',
     helperText: 'text-red-600 dark:text-red-600',
   },
   green: {
@@ -58,7 +58,7 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
     ref,
   ) => (
     <>
-      <div className=" relative flex w-full items-center justify-center">
+      <div className="relative flex w-full items-center justify-center">
         {Icon && (
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
