@@ -30,7 +30,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="alternative" onClick={() => setOpenModal(undefined)}>
+              <Button color="blue" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>
@@ -51,10 +51,10 @@ const ModalPage: FC = () => {
                 Are you sure you want to delete this product?
               </h3>
               <div className="flex justify-center gap-4">
-                <Button color="red" onClick={() => setOpenModal(undefined)}>
+                <Button color="blue" onClick={() => setOpenModal(undefined)}>
                   {"Yes, I'm sure"}
                 </Button>
-                <Button color="alternative" onClick={() => setOpenModal(undefined)}>
+                <Button color="blue" onClick={() => setOpenModal(undefined)}>
                   No, cancel
                 </Button>
               </div>
@@ -115,7 +115,7 @@ const ModalPage: FC = () => {
       code: (
         <>
           <div className="flex flex-wrap gap-4">
-            <Select className="w-40" defaultValue="md" onChange={(event) => setModalSize(event.target.value)}>
+            <Select className="w-40" defaultValue="md" onChange={(event: any) => setModalSize(event.target.value)}>
               <option value="sm">sm</option>
               <option value="md">md</option>
               <option value="lg">lg</option>
@@ -144,7 +144,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="alternative" onClick={() => setOpenModal(undefined)}>
+              <Button color="blue" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>
@@ -157,7 +157,11 @@ const ModalPage: FC = () => {
       code: (
         <>
           <div className="flex flex-wrap gap-4">
-            <Select className="w-40" defaultValue="center" onChange={(event) => setModalPlacement(event.target.value)}>
+            <Select
+              className="w-40"
+              defaultValue="center"
+              onChange={(event: any) => setModalPlacement(event.target.value)}
+            >
               <option value="center">Center</option>
               <option value="top-left">Top left</option>
               <option value="top-center">Top center</option>
@@ -189,7 +193,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="alternative" onClick={() => setOpenModal(undefined)}>
+              <Button color="blue" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>

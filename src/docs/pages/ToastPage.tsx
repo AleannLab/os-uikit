@@ -92,7 +92,7 @@ const ToastPage: FC = () => {
               <Button className="!w-full" size="xs">
                 Update
               </Button>
-              <Button className="!w-full" color="light" size="xs">
+              <Button className="!w-full" color="blue" size="xs">
                 Not now
               </Button>
             </div>
