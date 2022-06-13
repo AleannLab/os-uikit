@@ -4,7 +4,7 @@ import ButtonGroup from './ButtonGroup';
 
 type Color = 'blue' | 'gray' | 'lightGray' | 'lightGreen' | 'transparent';
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
-type PositionInGroup = 'start' | 'middle' | 'end' | 'normal';
+type PositionInGroup = 'start' | 'middle' | 'end' | 'normal' | 'rounded';
 type PositionText = 'start' | 'center' | 'end';
 
 export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
@@ -17,13 +17,14 @@ export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
   ptx?: PositionText;
   pty?: PositionText;
   positionInGroup?: PositionInGroup;
+  classButton?: string;
 };
 
 const colorClasses: Record<Color, string> = {
-  blue: 'text-white bg-blue-600 hover:bg-blue-800 rounded-md text-base font-medium focus:bg-blue-300 disabled:hover:bg-blue-700',
-  gray: 'text-black bg-gray-600 hover:bg-gray-800 rounded-md  text-base font-medium focus:bg-gray-300 disabled:hover:bg-gray-700',
-  lightGray: 'text-blue-600 bg-gray-200 hover:bg-gray-400 rounded-md text-base font-medium disabled:hover:bg-gray-300',
-  lightGreen: 'text-white bg-green-400 hover:bg-green-500 rounded-md text-base font-medium disabled:hover:bg-green-500',
+  blue: 'text-white bg-blue-600 hover:bg-blue-800 text-base font-medium disabled:hover:bg-blue-700',
+  gray: 'text-black bg-gray-600 hover:bg-gray-800 text-base font-medium disabled:hover:bg-gray-700',
+  lightGray: 'text-blue-600 bg-gray-200 hover:bg-gray-400 text-base font-medium disabled:hover:bg-gray-300',
+  lightGreen: 'text-white bg-green-400 hover:bg-green-500 text-base font-medium disabled:hover:bg-green-500',
   transparent: 'bg-transparent border-none text-black hover:bg-none',
 };
 
@@ -70,11 +71,13 @@ const buttonBorderClasses: Record<PositionInGroup, string> = {
   middle: '!rounded-none border-l-0 pl-0',
   end: 'rounded-l-none border-l-0 pl-0',
   normal: 'rounded-lg',
+  rounded: 'rounded-full',
 };
 
 const ButtonComponent: FC<ButtonComponentProps> = ({
   children,
   className,
+  classButton,
   pill = false,
   ring = false,
   disabled = false,
@@ -122,6 +125,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
           [iconSizeClasses[size]]: !!Icon,
         },
         className,
+        classButton,
       )}
     >
       {Icon ? <Icon className="h-5 w-5" /> : <>{children}</>}
