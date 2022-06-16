@@ -74,7 +74,7 @@ export const Tooltip: FC<TooltipProps> = ({
 
   return (
     <>
-      <div className="w-fit" {...getReferenceProps({ ref: reference })} data-testid="tooltip-target">
+      <div className="w-fit truncate" {...getReferenceProps({ ref: reference })} data-testid="tooltip-target">
         {children}
       </div>
       <div
