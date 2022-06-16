@@ -25,7 +25,7 @@ const colorClasses: Record<Color, string> = {
   gray: 'text-black bg-gray-600 hover:bg-gray-800 text-base font-medium disabled:hover:bg-gray-700',
   lightGray: 'text-blue-600 bg-gray-200 hover:bg-gray-400 text-base font-medium disabled:hover:bg-gray-300',
   lightGreen: 'text-white bg-green-400 hover:bg-green-500 text-base font-medium disabled:hover:bg-green-500',
-  transparent: 'bg-transparent border-none text-black hover:bg-none',
+  transparent: 'bg-transparent border-none hover:bg-none',
 };
 
 const ringClasses: Record<Color, string> = {
