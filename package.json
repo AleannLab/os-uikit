@@ -30,7 +30,6 @@
     "test:coverage": "CI=true react-app-rewired test --coverage --collectCoverageFrom='[\"src/lib/**/*.{ts,tsx}\",\"!src/lib/**/*.stories.{ts,tsx}\"]' --color",
     "test:e2e": "start-test 3000 cypress:run",
     "test:e2e:open": "start-test 3000 cypress:open",
-    "deploy": "sh deploy.sh",
     "yalc": "yalc",
     "watch": "watch \"npm --no-git-tag-version version patch && yarn yalc publish && yarn yalc push\" ./src"
   },
@@ -125,6 +124,5 @@
     "flowbite",
     "flowbite-react",
     "flowbite-react-components"
-  ],
-  "homepage": "https://storage.cloud.google.com/react-app-onlysky/os-uikit/build/"
+  ]
 }
