@@ -72,6 +72,13 @@ const ModalComponent: FC<ModalProps> = ({
     };
   }, [container, root, show]);
 
+  if (root) {
+    if (show) {
+      root.style.overflow = 'hidden';
+    } else {
+      root.style.overflow = 'unset';
+    }
+  }
   return container
     ? createPortal(
         <ModalContext.Provider value={{ popup, onClose }}>

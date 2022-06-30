@@ -2,7 +2,7 @@ import { ComponentProps, FC, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
 
 type Size = 'sm' | 'md' | 'lg' | 'xs';
-type Color = 'base' | 'dark';
+type Color = 'base' | 'dark' | 'transparent';
 type Position = 'start' | 'middle' | 'end' | 'normal';
 
 export type TextInputProps = ComponentProps<'input'> & {
@@ -19,13 +19,17 @@ export type TextInputProps = ComponentProps<'input'> & {
 
 const colorClasses: Record<Color, { input: string; helperText: string }> = {
   base: {
-    input: 'bg-white border-gray-200 text-gray-900 placehilder-gray-700 focus:border-blue-600',
+    input: 'bg-white border-gray-200 text-gray-900 placeholder-gray-700 focus:border-blue-600',
     helperText: 'text-red-600 dark:text-red-600',
   },
   dark: {
     input:
       'bg-white border-black-200 text-black-900 placeholder-black-700 focus:border-gray-900 focus-visible:border-gray-900',
     helperText: 'text-red-600 dark:text-red-600',
+  },
+  transparent: {
+    input: 'border-transparent focus:border-transparent focus:ring-0',
+    helperText: '',
   },
 };
 
