@@ -31,7 +31,7 @@ export const Card: FC<CardProps> = ({ children, className, horizontal, imgAlt, i
           alt={imgAlt ?? ''}
         />
       )}
-      <div className="flex h-full flex-col justify-center gap-4 p-6">{children}</div>
+      <div className="flex h-full flex-col p-5">{children}</div>
     </div>
   );
 };
