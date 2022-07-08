@@ -17,12 +17,12 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
   const Wrapper = ({ children: wrapperChildren }: PropsWithChildren<Record<string, unknown>>) => (
     <li
       className={classNames('border-r-transparent', {
-        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse,
-        'border-r-[2px] border-r-[#0577D0]': open && !insideCollapse,
+        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
+        'border-r-[2px] border-r-[#0577D0]': open && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
-        <Tooltip content={label} placement="right">
+        <Tooltip style={'light'} content={label} placement="right">
           {wrapperChildren}
         </Tooltip>
       ) : (

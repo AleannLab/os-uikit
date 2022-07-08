@@ -34,12 +34,12 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <li
       data-testid="sidebar-item"
       className={classNames('border-r-transparent', {
-        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse,
-        'border-r-[2px] border-r-[#0577D0]': active && !insideCollapse,
+        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
+        'border-r-[2px] border-r-[#0577D0]': active && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
-        <Tooltip content={children} data-testid="sidebar-item-tooltip" placement="right">
+        <Tooltip style={'light'} content={children} data-testid="sidebar-item-tooltip" placement="right">
           {wrapperChildren}
         </Tooltip>
       ) : (
