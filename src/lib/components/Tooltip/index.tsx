@@ -106,7 +106,7 @@ export const Tooltip: FC<TooltipProps> = ({
           <div
             className={classNames('absolute z-10 h-2 w-2 rotate-45', {
               'bg-gray-900 dark:bg-gray-700': style === 'dark',
-              'bg-white': style === 'light',
+              'border border-r-0 border-t-0 border-l-gray-200 border-b-gray-200 bg-white': style === 'light',
               'bg-white dark:bg-gray-700': style === 'auto',
             })}
             data-testid="tooltip-arrow"
