@@ -52,7 +52,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <Wrapper>
       <Component
         className={classNames(
-          'group flex w-full items-center py-4 pl-6 pr-5 text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
+          'group flex w-full items-center py-4 pl-6 pr-[18px] text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
           {
             'bg-[#D8EDFD] !font-medium !text-[#0577D0]': active,
             'text-xs !text-[#6C859E] hover:!bg-white hover:font-medium hover:!text-[#0577D0]': insideCollapse,
@@ -63,8 +63,8 @@ const SidebarItem: FC<SidebarItemProps> = ({
       >
         {Icon && (
           <Icon
-            className={classNames('h-5 w-5 text-[#34495E] transition duration-75 group-hover:text-[#0577D0]', {
-              '!text-[#0577D0]': active,
+            className={classNames('h-5 w-5 stroke-[#34495E] transition duration-75 group-hover:stroke-[#0577D0]', {
+              '!stroke-[#0577D0]': active,
             })}
           />
         )}
