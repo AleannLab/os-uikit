@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { FC, PropsWithChildren, useState } from 'react';
-import { HiChevronDown, HiChevronUp, HiChevronRight } from 'react-icons/hi';
+import { VscChevronRight, VscChevronUp, VscChevronDown } from 'react-icons/vsc';
 import { Tooltip } from '../Tooltip';
 import { useSidebarContext } from './SidebarContext';
 import { SidebarItem } from './SidebarItem';
@@ -35,7 +35,7 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
     <Wrapper>
       <button
         className={classNames(
-          'group flex w-full items-center py-4 pl-6 pr-5 text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
+          'group flex w-full items-center py-4 pl-6 pr-[18px] text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
           {
             'bg-[#D8EDFD] !font-medium !text-[#0577D0]': open,
             'text-xs !text-[#6C859E] hover:!bg-white hover:font-medium hover:!text-[#0577D0]': !open && insideCollapse,
@@ -48,8 +48,8 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
       >
         {Icon && (
           <Icon
-            className={classNames('h-5 w-5 text-[#34495E] transition duration-75 group-hover:text-[#0577D0]', {
-              '!text-[#0577D0]': open,
+            className={classNames('h-5 w-5 stroke-[#34495E] transition duration-75 group-hover:stroke-[#0577D0]', {
+              '!stroke-[#0577D0]': open,
             })}
           />
         )}
@@ -62,14 +62,14 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
             </span>
             {insideCollapse ? (
               open ? (
-                <HiChevronDown className="mt-[4px] ml-[7px] h-4 w-4" />
+                <VscChevronDown className="mt-[4px] ml-[7px] h-4 w-4" />
               ) : (
-                <HiChevronRight className="mt-[4px] ml-[7px] h-4 w-4" />
+                <VscChevronRight className="mt-[4px] ml-[7px] h-4 w-4" />
               )
             ) : open ? (
-              <HiChevronUp className="h-5 w-5" />
+              <VscChevronUp className="h-5 w-[17px]" />
             ) : (
-              <HiChevronDown className="h-5 w-5" />
+              <VscChevronDown className="h-5 w-[17px]" />
             )}
           </>
         )}
