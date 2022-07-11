@@ -31,9 +31,15 @@ const SidebarItem: FC<SidebarItemProps> = ({
   const { insideCollapse } = useSidebarItemContext();
 
   const Wrapper = ({ children: wrapperChildren }: PropsWithChildren<Record<string, unknown>>) => (
-    <li data-testid="sidebar-item">
+    <li
+      data-testid="sidebar-item"
+      className={classNames('border-r-transparent', {
+        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
+        'border-r-[2px] border-r-[#0577D0]': active && !insideCollapse && !collapsed,
+      })}
+    >
       {collapsed ? (
-        <Tooltip content={children} data-testid="sidebar-item-tooltip" placement="right">
+        <Tooltip style={'light'} content={children} data-testid="sidebar-item-tooltip" placement="right">
           {wrapperChildren}
         </Tooltip>
       ) : (
@@ -46,10 +52,10 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <Wrapper>
       <Component
         className={classNames(
-          'flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700',
+          'group flex w-full items-center py-4 pl-6 pr-[18px] text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
           {
-            'bg-gray-100 dark:bg-gray-700': active,
-            'group w-full pl-8 transition duration-75': !collapsed && insideCollapse,
+            'bg-[#D8EDFD] !font-medium !text-[#0577D0]': active,
+            'text-xs !text-[#6C859E] hover:!bg-white hover:font-medium hover:!text-[#0577D0]': insideCollapse,
           },
           className,
         )}
@@ -57,10 +63,9 @@ const SidebarItem: FC<SidebarItemProps> = ({
       >
         {Icon && (
           <Icon
-            className={classNames(
-              'h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white',
-              { 'text-gray-700 dark:text-gray-100': active },
-            )}
+            className={classNames('h-5 w-5 stroke-[#34495E] transition duration-75 group-hover:stroke-[#0577D0]', {
+              '!stroke-[#0577D0]': active,
+            })}
           />
         )}
         {!collapsed && (
