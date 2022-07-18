@@ -2,7 +2,7 @@ import { ComponentProps, FC } from 'react';
 import classNames from 'classnames';
 import ButtonGroup from './ButtonGroup';
 
-type Color = 'blue' | 'gray' | 'lightGray' | 'lightGreen' | 'transparent' | 'mainRed';
+type Color = 'blue' | 'gray' | 'lightGray' | 'lightGreen' | 'transparent' | 'mainRed' | 'primary800';
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
 type PositionInGroup = 'start' | 'middle' | 'end' | 'normal' | 'rounded';
 type PositionText = 'start' | 'center' | 'end';
@@ -26,7 +26,8 @@ const colorClasses: Record<Color, string> = {
   lightGray: 'text-blue-600 bg-gray-200 hover:bg-gray-400 text-base font-medium disabled:hover:bg-gray-300',
   lightGreen: 'text-white bg-green-400 hover:bg-green-500 text-base font-medium disabled:hover:bg-green-500',
   transparent: 'bg-transparent border-none hover:bg-none',
-  mainRed: 'text-white bg-mainRed hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
+  mainRed: 'text-white bg-fall-700 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
+  primary800: 'text-white bg-primary-800 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
 };
 
 const ringClasses: Record<Color, string> = {
@@ -35,7 +36,8 @@ const ringClasses: Record<Color, string> = {
   lightGray: 'text-black bg-white border-gray-400 border hover:bg-gray-200 hover:text-white',
   lightGreen: 'text-black bg-white border-green-400 border hover:bg-green-400 hover:text-white',
   transparent: 'text-black bg-white border-black-700 border hover:bg-black-700 hover:text-white',
-  mainRed: 'text-black bg-white border-mainRed border hover:bg-mainRed hover:text-white',
+  mainRed: 'text-black bg-white border-fall-700 border hover:bg-fall-700 hover:text-white',
+  primary800: 'text-black bg-white border-primary-800 border hover:bg-primary-800 hover:text-white',
 };
 
 const sizeClasses: Record<Size, string> = {
