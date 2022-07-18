@@ -18,7 +18,7 @@ const SidebarComponent: FC<SidebarProps> = ({ children, className, collapsed = f
       <aside aria-label="Sidebar" className={classNames('h-full', collapsed ? 'w-16' : 'min-w-[220px]')} {...rest}>
         <div
           className={classNames(
-            'box-border flex h-[94vh] flex-col justify-between overflow-y-auto overflow-x-hidden border-r-[1px] border-r-[#DFDFDF] bg-white pt-[80px] pb-[40px]',
+            'box-border flex h-[93vh] flex-col justify-between overflow-y-auto overflow-x-hidden border-r-[1px] border-r-[#DFDFDF] bg-white pt-[80px] pb-[40px]',
             className,
           )}
         >
