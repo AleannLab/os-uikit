@@ -4,7 +4,7 @@ import * as nanoid from 'nanoid';
 
 export type ToggleSwitchProps = Omit<ComponentProps<'button'>, 'onChange'> & {
   checked: boolean;
-  label: string;
+  label?: string;
   onChange: (checked: boolean) => void;
 };
 
@@ -61,13 +61,15 @@ export const ToggleSwitch: FC<ToggleSwitchProps> = ({
               : 'border-gray-200 bg-gray-200 dark:border-gray-600 dark:bg-gray-700',
           )}
         />
-        <span
-          data-testid="flowbite-toggleswitch-label"
-          id={`${id}-flowbite-toggleswitch-label`}
-          className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          {label}
-        </span>
+        {label && (
+          <span
+            data-testid="flowbite-toggleswitch-label"
+            id={`${id}-flowbite-toggleswitch-label`}
+            className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >
+            {label}
+          </span>
+        )}
       </button>
     </>
   );
