@@ -33,7 +33,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
   const Wrapper = ({ children: wrapperChildren }: PropsWithChildren<Record<string, unknown>>) => (
     <li
       data-testid="sidebar-item"
-      className={classNames('border-r-transparent', {
+      className={classNames('cursor-pointer border-r-transparent', {
         'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
         'border-r-[2px] border-r-[#0577D0]': active && !insideCollapse && !collapsed,
       })}

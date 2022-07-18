@@ -15,7 +15,7 @@ export interface SidebarProps extends PropsWithChildren<HTMLAttributes<HTMLDivEl
 const SidebarComponent: FC<SidebarProps> = ({ children, className, collapsed = false, ...rest }) => {
   return (
     <SidebarContext.Provider value={{ collapsed }}>
-      <aside aria-label="Sidebar" className={classNames('h-full', collapsed ? 'w-16' : 'w-[220px]')} {...rest}>
+      <aside aria-label="Sidebar" className={classNames('h-full', collapsed ? 'w-16' : 'min-w-[220px]')} {...rest}>
         <div
           className={classNames(
             'box-border flex h-[94vh] flex-col justify-between overflow-y-auto overflow-x-hidden border-r-[1px] border-r-[#DFDFDF] bg-white pt-[80px] pb-[40px]',
