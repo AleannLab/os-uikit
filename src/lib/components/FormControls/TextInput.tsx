@@ -63,11 +63,11 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
     },
     ref,
   ) => (
-    <div className="relative flex w-full flex-col">
-      <div className="relative flex w-full items-center justify-center">
+    <div className={classNames('relative flex flex-col', full ? 'w-fit' : 'w-full')}>
+      <div className={classNames('relative flex items-center justify-center', full ? 'w-fit' : 'w-full')}>
         {Icon && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex cursor-pointer items-center pr-4">
+            <Icon />
           </div>
         )}
         <input
@@ -79,7 +79,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
             inputBorderClasses[position],
             full ? 'w-fit' : 'w-full',
             {
-              'pl-10': Icon,
+              'pr-10': Icon,
               'shadow-sm dark:shadow-sm-light': shadow,
             },
             className,
