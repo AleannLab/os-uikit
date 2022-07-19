@@ -1,7 +1,7 @@
 import { ComponentProps, FC } from 'react';
 import classNames from 'classnames';
 
-type Color = 'gray' | 'green' | 'red' | 'uplift';
+type Color = 'gray' | 'green' | 'red' | 'uplift700' | 'primary900';
 
 export type LabelProps = ComponentProps<'label'> & {
   color?: Color;
@@ -14,7 +14,8 @@ const colorClasses: Record<Color, string> = {
   gray: 'text-gray-400 dark:text-gray-300',
   green: 'text-green-700 dark:text-green-500',
   red: 'text-red-700 dark:text-red-500',
-  uplift: 'text-uplift-700 dark:text-uplift-500',
+  uplift700: 'text-uplift-700 dark:text-uplift-500',
+  primary900: 'text-primary-900 dark:text-primary-800',
 };
 
 export const Label: FC<LabelProps> = ({
