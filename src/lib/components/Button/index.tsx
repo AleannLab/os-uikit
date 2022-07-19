@@ -2,7 +2,17 @@ import { ComponentProps, FC } from 'react';
 import classNames from 'classnames';
 import ButtonGroup from './ButtonGroup';
 
-type Color = 'blue' | 'gray' | 'lightGray' | 'lightGreen' | 'transparent' | 'mainRed' | 'primary800';
+type Color =
+  | 'blue'
+  | 'gray'
+  | 'lightGray'
+  | 'lightGreen'
+  | 'transparent'
+  | 'mainRed'
+  | 'primary800'
+  | 'primary900'
+  | 'neutral425'
+  | 'uplift700';
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'none';
 type PositionInGroup = 'start' | 'middle' | 'end' | 'normal' | 'rounded';
 type PositionText = 'start' | 'center' | 'end';
@@ -28,6 +38,9 @@ const colorClasses: Record<Color, string> = {
   transparent: 'bg-transparent border-none hover:bg-none',
   mainRed: 'text-white bg-fall-700 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
   primary800: 'text-white bg-primary-800 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
+  primary900: 'text-white bg-primary-900 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
+  neutral425: 'text-white bg-neutral-425 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
+  uplift700: 'text-white bg-uplift-700 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
 };
 
 const ringClasses: Record<Color, string> = {
@@ -38,14 +51,17 @@ const ringClasses: Record<Color, string> = {
   transparent: 'text-black bg-white border-black-700 border hover:bg-black-700 hover:text-white',
   mainRed: 'text-black bg-white border-fall-700 border hover:bg-fall-700 hover:text-white',
   primary800: 'text-black bg-white border-primary-800 border hover:bg-primary-800 hover:text-white',
+  primary900: 'text-black bg-white border-primary-900 border hover:bg-primary-800 hover:text-white',
+  neutral425: 'text-black bg-white border-neutral-425 border hover:bg-primary-800 hover:text-white',
+  uplift700: 'text-black bg-white border-uplift-700 border hover:bg-primary-800 hover:text-white',
 };
 
 const sizeClasses: Record<Size, string> = {
   none: 'text-xs p-0',
   xs: 'text-xs px-2 py-0.5',
   sm: 'text-sm px-3 py-1',
-  md: 'text-sm px-4 py-1.5',
-  lg: 'text-base px-5 py-2',
+  md: 'text-sm px-4 py-2',
+  lg: 'text-base px-4 py-2',
   xl: 'text-base px-6 py-2.5',
 };
 
