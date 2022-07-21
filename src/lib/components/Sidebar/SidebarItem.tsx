@@ -34,8 +34,8 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <li
       data-testid="sidebar-item"
       className={classNames('cursor-pointer border-r-transparent', {
-        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
-        'border-r-[2px] border-r-[#0577D0]': active && !insideCollapse && !collapsed,
+        'hover:border-r-primary-800 border-r-xs': !insideCollapse && !collapsed,
+        'border-r-primary-800 border-r-xs': active && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
@@ -52,10 +52,11 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <Wrapper>
       <Component
         className={classNames(
-          'group flex w-full items-center py-4 pl-6 pr-[18px] text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
+          'hover:!text-primary-800 hover:bg-primary-425 pr-4.5 group flex w-full items-center py-4 pl-6 text-sm font-normal transition duration-75 hover:font-medium',
           {
-            'bg-[#D8EDFD] !font-medium !text-[#0577D0]': active,
-            'text-xs !text-[#6C859E] hover:!bg-white hover:font-medium hover:!text-[#0577D0]': insideCollapse,
+            '!text-primary-800 bg-primary-425 !font-medium': active,
+            '!text-primary-900': !insideCollapse,
+            'text-xs !text-neutral-800 hover:!bg-white hover:font-medium': insideCollapse,
           },
           className,
         )}
@@ -63,8 +64,8 @@ const SidebarItem: FC<SidebarItemProps> = ({
       >
         {Icon && (
           <Icon
-            className={classNames('h-5 w-5 stroke-[#34495E] transition duration-75 group-hover:stroke-[#0577D0]', {
-              '!stroke-[#0577D0]': active,
+            className={classNames('group-hover:stroke-primary-800 stroke-primary-900 h-5 w-5 transition duration-75', {
+              '!stroke-primary-800': active,
             })}
           />
         )}

@@ -17,8 +17,8 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
   const Wrapper = ({ children: wrapperChildren }: PropsWithChildren<Record<string, unknown>>) => (
     <li
       className={classNames('border-r-transparent', {
-        'border-r-[2px] hover:border-r-[#0577D0]': !insideCollapse && !collapsed,
-        'border-r-[2px] border-r-[#0577D0]': open && !insideCollapse && !collapsed,
+        'hover:border-r-primary-800 border-r-xs': !insideCollapse && !collapsed,
+        'border-r-primary-800 border-r-xs': open && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
@@ -35,10 +35,11 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
     <Wrapper>
       <button
         className={classNames(
-          'group flex w-full items-center py-4 pl-6 pr-[18px] text-sm font-normal text-[#34495E] transition duration-75 hover:bg-[#D8EDFD] hover:font-medium hover:text-[#0577D0]',
+          'text-primary-900 hover:text-primary-800 hover:bg-primary-425 pr-4.5 group flex w-full items-center py-4 pl-6 text-sm font-normal transition duration-75 hover:font-medium',
           {
-            'bg-[#D8EDFD] !font-medium !text-[#0577D0]': open,
-            'text-xs !text-[#6C859E] hover:!bg-white hover:font-medium hover:!text-[#0577D0]': !open && insideCollapse,
+            'bg-primary-425 !text-primary-800 !font-medium': open,
+            'hover:!text-primary-800 text-xs !text-neutral-800 hover:!bg-white hover:font-medium':
+              !open && insideCollapse,
           },
         )}
         data-testid="sidebar-collapse-button"
@@ -48,8 +49,8 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
       >
         {Icon && (
           <Icon
-            className={classNames('h-5 w-5 stroke-[#34495E] transition duration-75 group-hover:stroke-[#0577D0]', {
-              '!stroke-[#0577D0]': open,
+            className={classNames('group-hover:stroke-primary-800 stroke-primary-900 h-5 w-5 transition duration-75', {
+              '!stroke-primary-800': open,
             })}
           />
         )}
@@ -62,14 +63,14 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
             </span>
             {insideCollapse ? (
               open ? (
-                <VscChevronDown className="mt-[4px] ml-[7px] h-4 w-4" />
+                <VscChevronDown className="mt-1 ml-2 h-4 w-4" />
               ) : (
-                <VscChevronRight className="mt-[4px] ml-[7px] h-4 w-4" />
+                <VscChevronRight className="mt-1 ml-2 h-4 w-4" />
               )
             ) : open ? (
-              <VscChevronUp className="h-5 w-[17px]" />
+              <VscChevronUp className="w-4.5 h-5" />
             ) : (
-              <VscChevronDown className="h-5 w-[17px]" />
+              <VscChevronDown className="w-4.5 h-5" />
             )}
           </>
         )}
