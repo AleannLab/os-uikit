@@ -14,9 +14,9 @@ export const ModalHeader: FC<PropsWithChildren<any>> = ({ children }) => {
         'border-b p-5': !popup,
       })}
     >
-      <h3 className="text-xl font-medium text-gray-900 dark:text-white">{children}</h3>
+      <h3 className="text-xl font-medium text-gray-900 ">{children}</h3>
       <button
-        className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+        className="ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900"
         type="button"
         onClick={onClose}
       >

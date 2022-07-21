@@ -96,7 +96,7 @@ const ModalComponent: FC<ModalProps> = ({
           >
             <div className={classNames('relative h-full w-full', { 'p-4 md:h-auto': indent }, sizeClasses[size])}>
               <div
-                className={classNames('relative bg-white shadow dark:bg-gray-700', {
+                className={classNames('relative bg-white shadow ', {
                   'rounded-lg': rounded,
                   'h-full': !rounded,
                 })}
