@@ -1,7 +1,7 @@
 import { ComponentProps, FC, ReactNode } from 'react';
 import classNames from 'classnames';
 
-type Color = 'base' | 'green' | 'red';
+type Color = 'base' | 'green' | 'red' | 'light';
 
 export type TextareaProps = ComponentProps<'textarea'> & {
   shadow?: boolean;
@@ -25,6 +25,10 @@ const colorClasses: Record<Color, { input: string; helperText: string }> = {
       'border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500 dark:border-red-400 dark:bg-red-100 dark:focus:border-red-500 dark:focus:ring-red-500',
     helperText: 'text-red-600 dark:text-red-500',
   },
+  light: {
+    input: 'border border-neutral-425 rounded',
+    helperText: 'text-red-600 dark:text-red-500',
+  },
 };
 
 export const Textarea: FC<TextareaProps> = ({ className, shadow, helperText, color = 'base', ...props }) => (
@@ -40,6 +44,6 @@ export const Textarea: FC<TextareaProps> = ({ className, shadow, helperText, col
       )}
       {...props}
     />
-    {helperText && <p className={classNames('mt-2 text-sm', colorClasses[color].helperText)}>{helperText}</p>}
+    {helperText && <p className={classNames('mt-2 text-sm ', colorClasses[color].helperText)}>{helperText}</p>}
   </>
 );
