@@ -1,7 +1,7 @@
 import { ComponentProps, FC, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
 
-type Size = 'sm' | 'md' | 'lg' | 'xs';
+type Size = 'sm' | 'md' | 'lg' | 'xs' | 'xl';
 type Color = 'base' | 'dark' | 'transparent';
 type Position = 'start' | 'middle' | 'end' | 'normal';
 
@@ -41,10 +41,11 @@ const inputBorderClasses: Record<Position, string> = {
 };
 
 const sizeClasses: Record<Size, string> = {
-  xs: 'p-2 text-xs',
-  sm: 'p-2.5 text-sm',
-  md: 'p-3 text-md',
-  lg: 'p-4 text-lg',
+  xs: 'p-2 !text-xs',
+  sm: 'p-2.5 !text-sm',
+  md: 'p-3 !text-md',
+  lg: 'p-4 !text-lg',
+  xl: 'px-3 py-3.5 !text-body-1'
 };
 
 export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
@@ -52,7 +53,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
     {
       className,
       sizing = 'md',
-      full,
+      full = true,
       shadow,
       helperText,
       position = 'normal',
@@ -63,8 +64,8 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
     },
     ref,
   ) => (
-    <div className={classNames('relative flex flex-col', full !== undefined ? 'w-full' : '')}>
-      <div className={classNames('relative flex items-center justify-center', full !== undefined ? 'w-full' : '')}>
+    <div className={classNames('relative flex flex-col', {'w-full':full} )}>
+      <div className={classNames('relative flex items-center justify-center', {'w-full':full})}>
         {Icon && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex cursor-pointer items-center pr-4">
             <Icon />
@@ -77,7 +78,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
             colorClasses[color].input,
             sizeClasses[sizing],
             inputBorderClasses[position],
-            full !== undefined ? 'w-full' : '',
+            {'w-full':full},
             {
               'pr-10': Icon,
               'shadow-sm dark:shadow-sm-light': shadow,
