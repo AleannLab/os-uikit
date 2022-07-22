@@ -34,8 +34,8 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <li
       data-testid="sidebar-item"
       className={classNames('cursor-pointer border-r-transparent', {
-        'hover:border-r-primary-800 border-r-xs': !insideCollapse && !collapsed,
-        'border-r-primary-800 border-r-xs': active && !insideCollapse && !collapsed,
+        'border-r-xs hover:border-r-primary-800': !insideCollapse && !collapsed,
+        'border-r-xs border-r-primary-800': active && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
@@ -52,9 +52,9 @@ const SidebarItem: FC<SidebarItemProps> = ({
     <Wrapper>
       <Component
         className={classNames(
-          'hover:!text-primary-800 hover:bg-primary-425 pr-4.5 group flex w-full items-center py-4 pl-6 text-sm font-normal transition duration-75 hover:font-medium',
+          'group flex w-full items-center py-4 pr-4.5 pl-6 text-sm font-normal transition duration-75 hover:bg-primary-425 hover:font-medium hover:!text-primary-800',
           {
-            '!text-primary-800 bg-primary-425 !font-medium': active,
+            'bg-primary-425 !font-medium !text-primary-800': active,
             '!text-primary-900': !insideCollapse,
             'text-xs !text-neutral-800 hover:!bg-white hover:font-medium': insideCollapse,
           },
@@ -64,7 +64,7 @@ const SidebarItem: FC<SidebarItemProps> = ({
       >
         {Icon && (
           <Icon
-            className={classNames('group-hover:stroke-primary-800 stroke-primary-900 h-5 w-5 transition duration-75', {
+            className={classNames('h-5 w-5 stroke-primary-900 transition duration-75 group-hover:stroke-primary-800', {
               '!stroke-primary-800': active,
             })}
           />

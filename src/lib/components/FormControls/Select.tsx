@@ -39,7 +39,7 @@ const sizeClasses: Record<Size, string> = {
   sm: 'p-2.5 !text-sm',
   md: 'p-3 !text-md',
   lg: 'p-4 !text-lg',
-  xl: 'px-3 py-3.5 !text-body-1'
+  xl: 'px-3 py-3.5 !text-body-1',
 };
 
 export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
@@ -62,7 +62,7 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
       <div className="relative flex w-full items-center justify-center">
         {Icon && (
           <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center pl-3">
-            <Icon className="h-4 w-4 text-gray-500 stroke-primary-900" />
+            <Icon className="h-4 w-4 stroke-primary-900 text-gray-500" />
           </div>
         )}
         <select

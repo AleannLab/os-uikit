@@ -11,25 +11,28 @@ type ModalHeaderProps = PropsWithChildren<{
   className?: string;
 }>;
 
-
 const sizeClassesICon: Record<Size, string> = {
   sm: 'h-4 w-4',
   md: 'h-5 w-5',
 };
 
-export const ModalHeader: FC<ModalHeaderProps> = ({ children, text, sizeIcon = "md", className }) => {
+export const ModalHeader: FC<ModalHeaderProps> = ({ children, text, sizeIcon = 'md', className }) => {
   const { popup, onClose } = useModalContext();
 
   return (
     <div
-      className={classNames('flex items-start justify-between rounded-t', {
-        'pt-4 px-6': popup,
-        'border-b p-5': !popup,
-      }, className)}
+      className={classNames(
+        'flex items-start justify-between rounded-t',
+        {
+          'px-6 pt-4': popup,
+          'border-b p-5': !popup,
+        },
+        className,
+      )}
     >
-      <h3 className="text-primary-900 text-body-4 font-medium">{children}</h3>
+      <h3 className="text-body-4 font-medium text-primary-900">{children}</h3>
       <button
-        className="ml-auto flex gap-2 items-center rounded-lg bg-transparent font-normal p-1.5 text-body-5 text-neutral-800"
+        className="text-body-5 ml-auto flex items-center gap-2 rounded-lg bg-transparent p-1.5 font-normal text-neutral-800"
         type="button"
         onClick={onClose}
       >

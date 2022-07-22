@@ -24,7 +24,7 @@ export type ModalProps = PropsWithChildren<{
 
 const sizeClasses: Record<Size, string> = {
   sm: 'max-w-sm',
-  "2md": 'max-w-2md',
+  '2md': 'max-w-2md',
   md: 'max-w-md',
   lg: 'max-w-lg',
   xl: 'max-w-xl',
