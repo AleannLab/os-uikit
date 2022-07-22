@@ -1,7 +1,7 @@
 import { ComponentProps, FC, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
 
-type Size = 'sm' | 'md' | 'lg' | 'xs';
+type Size = 'sm' | 'md' | 'lg' | 'xs' | 'xl';
 type Color = 'base' | 'green';
 type Position = 'start' | 'middle' | 'end' | 'normal';
 
@@ -35,10 +35,11 @@ const inputBorderClasses: Record<Position, string> = {
 };
 
 const sizeClasses: Record<Size, string> = {
-  xs: 'p-2 text-xs',
-  sm: 'p-2.5 text-sm',
-  md: 'p-3 text-md',
-  lg: 'p-4 text-lg',
+  xs: 'p-2 !text-xs',
+  sm: 'p-2.5 !text-sm',
+  md: 'p-3 !text-md',
+  lg: 'p-4 !text-lg',
+  xl: 'px-3 py-3.5 !text-body-1'
 };
 
 export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
@@ -60,8 +61,8 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
     <>
       <div className="relative flex w-full items-center justify-center">
         {Icon && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+          <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center pl-3">
+            <Icon className="h-4 w-4 text-gray-500 stroke-primary-900" />
           </div>
         )}
         <select
