@@ -1,4 +1,4 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, forwardRef, ReactNode } from 'react';
 import classNames from 'classnames';
 
 type Color = 'base' | 'green' | 'red' | 'light';
@@ -30,20 +30,22 @@ const colorClasses: Record<Color, { input: string; helperText: string }> = {
     helperText: 'text-red-600 dark:text-red-500',
   },
 };
-
-export const Textarea: FC<TextareaProps> = ({ className, shadow, helperText, color = 'base', ...props }) => (
-  <>
-    <textarea
-      className={classNames(
-        'block w-full rounded-lg border disabled:cursor-not-allowed disabled:opacity-50',
-        colorClasses[color].input,
-        {
-          'shadow-sm dark:shadow-sm-light': shadow,
-        },
-        className,
-      )}
-      {...props}
-    />
-    {helperText && <p className={classNames('mt-2 text-sm ', colorClasses[color].helperText)}>{helperText}</p>}
-  </>
+export const Textarea: any = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ className, shadow, helperText, color = 'base', ...props }, ref) => (
+    <>
+      <textarea
+        ref={ref}
+        className={classNames(
+          'block w-full rounded-lg border disabled:cursor-not-allowed disabled:opacity-50',
+          colorClasses[color].input,
+          {
+            'shadow-sm dark:shadow-sm-light': shadow,
+          },
+          className,
+        )}
+        {...props}
+      />
+      {helperText && <p className={classNames('mt-2 text-sm ', colorClasses[color].helperText)}>{helperText}</p>}
+    </>
+  ),
 );
