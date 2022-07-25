@@ -32,7 +32,8 @@ export const ModalHeader: FC<ModalHeaderProps> = ({ children, text, sizeIcon = '
     >
       <h3 className="text-body-4 font-medium text-primary-900">{children}</h3>
       <button
-        className="text-body-5 ml-auto flex items-center gap-2 rounded-lg bg-transparent p-1.5 font-normal text-neutral-800"
+        className="text-body-5 ml-auto flex items-center gap-2 rounded-lg bg-transparent p-1.5 font-normal
+        text-neutral-800 hover:bg-gray-100 focus:border-0 focus:outline-0"
         type="button"
         onClick={onClose}
       >
