@@ -143,6 +143,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
           '!rounded-none': positionInGroup === 'middle',
           'rounded-l-none': positionInGroup === 'end',
           [iconSizeClasses[size]]: !!Icon,
+          'cursor-not-allowed opacity-50': disabled,
         },
         className,
         classButton,
