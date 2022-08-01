@@ -17,8 +17,8 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
   const Wrapper = ({ children: wrapperChildren }: PropsWithChildren<Record<string, unknown>>) => (
     <li
       className={classNames('border-r-transparent', {
-        'hover:border-r-primary-800 border-r-xs': !insideCollapse && !collapsed,
-        'border-r-primary-800 border-r-xs': open && !insideCollapse && !collapsed,
+        'border-r-xs hover:border-r-primary-800': !insideCollapse && !collapsed,
+        'border-r-xs border-r-primary-800': open && !insideCollapse && !collapsed,
       })}
     >
       {collapsed ? (
@@ -35,10 +35,10 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
     <Wrapper>
       <button
         className={classNames(
-          'text-primary-900 hover:text-primary-800 hover:bg-primary-425 pr-4.5 group flex w-full items-center py-4 pl-6 text-sm font-normal transition duration-75 hover:font-medium',
+          'group flex w-full items-center py-4 pr-4.5 pl-6 text-sm font-normal text-primary-900 transition duration-75 hover:bg-primary-425 hover:font-medium hover:text-primary-800',
           {
-            'bg-primary-425 !text-primary-800 !font-medium': open,
-            'hover:!text-primary-800 text-xs !text-neutral-800 hover:!bg-white hover:font-medium':
+            'bg-primary-425 !font-medium !text-primary-800': open,
+            'text-xs !text-neutral-800 hover:!bg-white hover:font-medium hover:!text-primary-800':
               !open && insideCollapse,
           },
         )}
@@ -49,7 +49,7 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
       >
         {Icon && (
           <Icon
-            className={classNames('group-hover:stroke-primary-800 stroke-primary-900 h-5 w-5 transition duration-75', {
+            className={classNames('h-5 w-5 stroke-primary-900 transition duration-75 group-hover:stroke-primary-800', {
               '!stroke-primary-800': open,
             })}
           />

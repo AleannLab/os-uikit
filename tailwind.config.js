@@ -5,10 +5,10 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xl: "1440px",
+        xl: '1440px',
       },
       gridTemplateRows: {
-        12: "repeat(12, minmax(0, 1fr))",
+        12: 'repeat(12, minmax(0, 1fr))',
       },
       minWidth: {
         xs: "16px",
@@ -76,23 +76,23 @@ module.exports = {
           425: "#F1F1F1",
         },
         uplift: {
-          700: "#2ECC71",
-          500: "#B5FFD4",
+          700: '#2ECC71',
+          500: '#B5FFD4',
         },
         fall: {
-          700: "#E74C3C",
-          500: "#FFC6B5",
+          700: '#E74C3C',
+          500: '#FFC6B5',
         },
-        body: "#F8F8F8",
-        modal: "#efefef",
-        mainOrange: "#F1C40F",
+        body: '#F8F8F8',
+        modal: '#efefef',
+        mainOrange: '#F1C40F',
       },
       borderWidth: {
-        DEFAULT: "1px",
-        none: "0",
-        xs: "2px",
-        sm: "4px",
-        md: "8px",
+        DEFAULT: '1px',
+        none: '0',
+        xs: '2px',
+        sm: '4px',
+        md: '8px',
       },
       spacing: {
         1.5: "0.3125rem",
