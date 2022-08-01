@@ -14,5 +14,8 @@ export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ clas
       type="checkbox"
       {...props}
     />
+    <label htmlFor={props.id} className="ml-2 mb-0 text-sm font-medium text-gray-900 dark:text-gray-300">
+      {props.title}
+    </label>
   </>
 ));
