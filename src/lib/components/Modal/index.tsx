@@ -8,7 +8,7 @@ import { ModalFooter } from './ModalFooter';
 import { ModalContext } from './ModalContext';
 import windowExists from '../../helpers/window-exists';
 
-type Size = 'sm' | '2md' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
+type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
 type Placement = `${'top' | 'bottom'}-${'left' | 'center' | 'right'}` | `center${'' | '-left' | '-right'}`;
 
 export type ModalProps = PropsWithChildren<{
@@ -24,7 +24,6 @@ export type ModalProps = PropsWithChildren<{
 
 const sizeClasses: Record<Size, string> = {
   sm: 'max-w-sm',
-  "2md": 'max-w-2md',
   md: 'max-w-md',
   lg: 'max-w-lg',
   xl: 'max-w-xl',
