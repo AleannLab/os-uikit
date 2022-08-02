@@ -68,9 +68,9 @@ const SidebarCollapse: FC<SidebarCollapseProps> = ({ children, icon: Icon, label
                 <VscChevronRight className="mt-1 ml-2 h-4 w-4" />
               )
             ) : open ? (
-              <VscChevronUp className="w-4.3 h-5" />
+              <VscChevronUp className="h-5 w-4.3" />
             ) : (
-              <VscChevronDown className="w-4.3 h-5" />
+              <VscChevronDown className="h-5 w-4.3" />
             )}
           </>
         )}
