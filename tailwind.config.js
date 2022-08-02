@@ -1,3 +1,4 @@
+const plugin = require("tailwindcss/plugin");
 const responsiveTextPlugin = require("./responsiveTextPlugin");
 
 module.exports = {
@@ -179,6 +180,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('./plugin'),
     responsiveTextPlugin({
       extraFonts: [{ name: "serif", multiplicator: 1.08 }],
     }),
