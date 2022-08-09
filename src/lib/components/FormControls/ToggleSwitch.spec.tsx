@@ -101,7 +101,7 @@ describe('Components / Form controls / Toggle switch', () => {
               checked={state}
               label="Enable notifications"
               name="notifications"
-              onChange={(value) => {
+              onChange={(value: any) => {
                 setState(value);
                 handleChange(value);
               }}
