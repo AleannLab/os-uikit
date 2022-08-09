@@ -1,9 +1,9 @@
-import { ComponentProps, forwardRef } from 'react';
+import { ComponentProps, forwardRef, PropsWithChildren } from 'react';
 import classNames from 'classnames';
 
-export type CheckboxProps = Omit<ComponentProps<'input'>, 'type'>;
+export type CheckboxProps = Omit<ComponentProps<'input'>, 'type'> | PropsWithChildren<any>;
 
-export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => (
+export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ className, children, ...props }, ref) => (
   <>
     <input
       ref={ref}
@@ -15,7 +15,7 @@ export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ clas
       {...props}
     />
     <label htmlFor={props.id} className="ml-2 mb-0 text-sm font-medium text-gray-900 dark:text-gray-300">
-      {props.title}
+      {children ? children : props.title}
     </label>
   </>
 ));
