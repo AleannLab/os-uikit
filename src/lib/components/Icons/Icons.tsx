@@ -24,6 +24,30 @@ const ArrowUp = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const ArrowLeft = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M15.188 9H2.812M7.875 3.938 2.812 9l5.063 5.063"
+      stroke="current"
+      strokeWidth={1.4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const ArrowRight = (props: SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M2.813 9h12.374M10.125 14.063 15.188 9l-5.063-5.063"
+      stroke="current"
+      strokeWidth={1.4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const Calendar = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
@@ -36,7 +60,7 @@ const Calendar = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Camera = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={32} height={32} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M26 26H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4l2-3h8l2 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2Z"
       stroke="current"
@@ -67,30 +91,6 @@ const Checked = (props: SVGProps<SVGSVGElement>) => (
 const ChevronDown = (props: SVGProps<SVGSVGElement>) => (
   <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path d="m13 6-5 5-5-5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const ChevronLeft = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path
-      d="M15.188 9H2.812M7.875 3.938 2.812 9l5.063 5.063"
-      stroke="current"
-      strokeWidth={1.4}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const ChevronRight = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path
-      d="M2.813 9h12.374M10.125 14.063 15.188 9l-5.063-5.063"
-      stroke="current"
-      strokeWidth={1.4}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
   </svg>
 );
 
@@ -232,12 +232,12 @@ const Trash = (props: SVGProps<SVGSVGElement>) => (
 export {
   ArrowDown,
   ArrowUp,
+  ArrowLeft,
+  ArrowRight,
   Calendar,
   Camera,
   Checked,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   ChevronUp,
   Crm,
   Cross,
