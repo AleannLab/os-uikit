@@ -1,9 +1,50 @@
 import { FC } from 'react';
-import { ArrowDown, ArrowUp } from '../Icons/Icons';
+import {
+  ArrowDown,
+  ArrowUp,
+  Calendar,
+  Camera,
+  Checked,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Crm,
+  Cross,
+  Dashboard,
+  EyeClosed,
+  EyeOpen,
+  Info,
+  Itinerary,
+  Link,
+  Pencil,
+  Plus,
+  School,
+  Trash,
+} from '../Icons/Icons';
 
 const includedIcons = {
   ArrowDown,
   ArrowUp,
+  Calendar,
+  Camera,
+  Checked,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  Crm,
+  Cross,
+  Dashboard,
+  EyeClosed,
+  EyeOpen,
+  Info,
+  Itinerary,
+  Link,
+  Pencil,
+  Plus,
+  School,
+  Trash,
 };
 
 export type IconType = keyof typeof includedIcons | string;
@@ -11,9 +52,10 @@ export type IconType = keyof typeof includedIcons | string;
 interface IconProps {
   type: IconType;
   className?: string;
+  onClick?: () => void;
 }
 
-export const Icon: FC<IconProps> = ({ type, className, ...props }) => {
+export const Icon: FC<IconProps> = ({ type, className, onClick, ...props }) => {
   const IconSelected = (includedIcons as any)[type];
 
   if (!IconSelected) {
@@ -21,5 +63,5 @@ export const Icon: FC<IconProps> = ({ type, className, ...props }) => {
     return null;
   }
 
-  return <IconSelected className={className} {...props} /> || null;
+  return <IconSelected className={className} onClick={onClick} {...props} /> || null;
 };
