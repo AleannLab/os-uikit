@@ -231,13 +231,14 @@ const School = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Trash = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
-      d="M13.5 3.5h-11M6.5 6.5v4M9.5 6.5v4M12.5 3.5V13a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V3.5M10.5 3.5v-1a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v1"
+      d="M17.5 7.5h-11M10.5 10.5v4M13.5 10.5v4M16.5 7.5V17a.5.5 0 0 1-.5.5H8a.5.5 0 0 1-.5-.5V7.5M14.5 7.5v-1a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v1"
       stroke="current"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+    <rect x={0.5} y={0.5} width={23} height={23} rx={11.5} stroke="current" />
   </svg>
 );
 
