@@ -231,13 +231,23 @@ const School = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Trash = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M17.5 7.5H6.5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M10.5 10.5V14.5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13.5 10.5V14.5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
     <path
-      d="M13.5 3.5h-11M6.5 6.5v4M9.5 6.5v4M12.5 3.5V13a.5.5 0 0 1-.5.5H4a.5.5 0 0 1-.5-.5V3.5M10.5 3.5v-1a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v1"
+      d="M16.5 7.5V17C16.5 17.1326 16.4473 17.2598 16.3536 17.3536C16.2598 17.4473 16.1326 17.5 16 17.5H8C7.86739 17.5 7.74021 17.4473 7.64645 17.3536C7.55268 17.2598 7.5 17.1326 7.5 17V7.5"
       stroke="current"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
+    <path
+      d="M14.5 7.5V6.5C14.5 6.23478 14.3946 5.98043 14.2071 5.79289C14.0196 5.60536 13.7652 5.5 13.5 5.5H10.5C10.2348 5.5 9.98043 5.60536 9.79289 5.79289C9.60536 5.98043 9.5 6.23478 9.5 6.5V7.5"
+      stroke="current"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <rect x="0.5" y="0.5" width="23" height="23" rx="11.5" stroke="current" />
   </svg>
 );
 
