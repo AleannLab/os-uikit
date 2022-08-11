@@ -13,6 +13,7 @@ export * from './DarkThemeToggle';
 export * from './Footer';
 export * from './FormControls';
 export * from './Flowbite';
+export * from './Icon';
 export * from './ListGroup';
 export * from './Modal';
 export * from './Navbar';

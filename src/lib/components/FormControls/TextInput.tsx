@@ -1,5 +1,6 @@
-import { ComponentProps, FC, ReactNode, forwardRef } from 'react';
+import { ComponentProps, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
+import { Icon } from '../Icon';
 
 type Size = 'sm' | 'md' | 'lg' | 'xs' | 'xl';
 type Color = 'base' | 'dark' | 'transparent';
@@ -10,7 +11,8 @@ export type TextInputProps = ComponentProps<'input'> & {
   shadow?: boolean;
   helperText?: ReactNode;
   addon?: ReactNode;
-  icon?: FC<ComponentProps<'svg'>>;
+  iconName?: string;
+  iconClass?: string;
   color?: Color;
   position?: Position;
   full?: boolean;
@@ -57,7 +59,8 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
       shadow,
       helperText,
       position = 'normal',
-      icon: Icon,
+      iconName,
+      iconClass,
       color = 'base',
       element,
       ...props
@@ -66,9 +69,9 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
   ) => (
     <div className={classNames('relative flex flex-col', { 'w-full': full })}>
       <div className={classNames('relative flex items-center justify-center', { 'w-full': full })}>
-        {Icon && (
+        {iconName && (
           <div className="pointer-events-none absolute inset-y-0 right-0 flex cursor-pointer items-center pr-4">
-            <Icon />
+            <Icon type={iconName} className={iconClass ? iconClass : ''} />
           </div>
         )}
         <input
@@ -80,7 +83,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
             inputBorderClasses[position],
             { 'w-full': full },
             {
-              'pr-10': Icon,
+              'pr-10': iconName,
               'shadow-sm dark:shadow-sm-light': shadow,
             },
             className,

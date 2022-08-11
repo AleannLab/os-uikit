@@ -1,5 +1,6 @@
-import { ComponentProps, FC, ReactNode, forwardRef } from 'react';
+import { ComponentProps, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
+import { Icon } from '../Icon';
 
 type Size = 'sm' | 'md' | 'lg' | 'xs' | 'xl';
 type Color = 'base' | 'green';
@@ -9,7 +10,8 @@ export type SelectProps = ComponentProps<'select'> & {
   sizing?: Size;
   shadow?: boolean;
   helperText?: ReactNode;
-  icon?: FC<ComponentProps<'svg'>>;
+  iconName?: string;
+  iconClass?: string;
   position?: Position;
   color?: Color;
   full?: boolean;
@@ -51,7 +53,8 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
       shadow,
       helperText,
       position = 'normal',
-      icon: Icon,
+      iconName,
+      iconClass,
       color = 'base',
       full,
       ...props
@@ -60,9 +63,9 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
   ) => (
     <>
       <div className="relative flex w-full items-center justify-center">
-        {Icon && (
+        {iconName && (
           <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center pl-3">
-            <Icon className="h-4 w-4 stroke-primary-900 text-gray-500" />
+            <Icon type={iconName} className={iconClass ? iconClass : ''} />
           </div>
         )}
         <select
@@ -74,7 +77,7 @@ export const Select: any = forwardRef<HTMLSelectElement, SelectProps>(
             inputBorderClasses[position],
             full ? 'w-fit' : 'w-full',
             {
-              'pl-10': Icon,
+              'pl-10': iconName,
               'shadow-sm dark:shadow-sm-light': shadow,
             },
             className,
