@@ -1,6 +1,7 @@
 import { ComponentProps, FC } from 'react';
 import classNames from 'classnames';
 import ButtonGroup from './ButtonGroup';
+import { Icon } from '../Icon';
 
 type Color =
   | 'blue'
@@ -22,7 +23,8 @@ export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
   ring?: boolean;
   color?: Color;
   size?: Size;
-  icon?: FC<ComponentProps<'svg'>>;
+  iconName?: string;
+  iconClass?: string;
   full?: boolean;
   ptx?: PositionText;
   pty?: PositionText;
@@ -102,7 +104,8 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
   ring = false,
   disabled = false,
   size = 'sm',
-  icon: Icon,
+  iconName,
+  iconClass,
   color = 'blue',
   full,
   ptx = 'center',
@@ -142,14 +145,14 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
           'rounded-r-none': positionInGroup === 'start',
           '!rounded-none': positionInGroup === 'middle',
           'rounded-l-none': positionInGroup === 'end',
-          [iconSizeClasses[size]]: !!Icon,
+          [iconSizeClasses[size]]: !!iconName,
           'cursor-not-allowed opacity-50': disabled,
         },
         className,
         classButton,
       )}
     >
-      {Icon ? <Icon className="h-5 w-5" /> : <>{children}</>}
+      {iconName ? <Icon type={iconName} className={iconClass} /> : <>{children}</>}
     </span>
   </button>
 );
