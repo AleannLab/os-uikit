@@ -77,10 +77,10 @@ const ButtonsPage: FC = () => {
       title: 'Icon buttons',
       code: (
         <div className="flex flex-wrap items-center gap-2">
-          <Button icon={HiOutlineArrowRight} />
-          <Button icon={HiOutlineArrowRight} pill={true} />
-          <Button icon={HiOutlineArrowRight} ring={true} />
-          <Button icon={HiOutlineArrowRight} pill={true} ring={true} />
+          <Button iconName="Filter" />
+          <Button iconName="Filter" pill={true} />
+          <Button iconName="Filter" ring={true} />
+          <Button iconName="Filter" pill={true} ring={true} />
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',

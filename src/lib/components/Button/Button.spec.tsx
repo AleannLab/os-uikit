@@ -18,7 +18,7 @@ describe('Button Component', () => {
   });
 
   it('should be able to render an icon button', () => {
-    const { getByTestId } = render(<Button icon={HiSun} />);
+    const { getByTestId } = render(<Button iconName="Filter" />);
     expect(getByTestId('button-element').children[0].children.length).toEqual(1);
     expect(getByTestId('button-element').children[0].children[0].tagName).toEqual('svg');
   });
