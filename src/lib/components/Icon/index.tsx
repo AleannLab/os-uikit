@@ -85,9 +85,11 @@ interface IconProps {
   type: IconType;
   className?: string;
   onClick?: () => void;
+  viewheight?: string;
+  viewwidth?: string;
 }
 
-export const Icon: FC<IconProps> = ({ type, className, onClick, ...props }) => {
+export const Icon: FC<IconProps> = ({ type, className, onClick, viewheight, viewwidth, ...props }) => {
   const IconSelected = (includedIcons as any)[type];
 
   if (!IconSelected) {
@@ -95,5 +97,8 @@ export const Icon: FC<IconProps> = ({ type, className, onClick, ...props }) => {
     return null;
   }
 
-  return <IconSelected className={className} onClick={onClick} {...props} /> || null;
+  return (
+    <IconSelected className={className} onClick={onClick} viewheight={viewheight} viewwidth={viewwidth} {...props} /> ||
+    null
+  );
 };

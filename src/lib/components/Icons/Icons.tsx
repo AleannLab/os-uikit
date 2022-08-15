@@ -1,4 +1,6 @@
-import { SVGProps } from 'react';
+import { FC, SVGProps } from 'react';
+
+type SvgProps = SVGProps<any> & { viewheight: string; viewwidth: string };
 
 const ArrowDown = (props: SVGProps<SVGSVGElement>) => (
   <svg width={18} height={18} fill={'none'} xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -59,8 +61,15 @@ const Calendar = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const Camera = (props: SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+const Camera: FC<SvgProps> = ({ viewheight = '26', viewwidth = '26', ...props }) => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox={`0 0 ${viewheight} ${viewwidth}`}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M26 26H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h4l2-3h8l2 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2Z"
       stroke="current"
@@ -307,7 +316,7 @@ const Filter = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Magnifier = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={20} height={20} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path
       d="M9.063 15.625a6.562 6.562 0 1 0 0-13.125 6.562 6.562 0 0 0 0 13.125ZM13.703 13.703 17.5 17.5"
       stroke="current"
