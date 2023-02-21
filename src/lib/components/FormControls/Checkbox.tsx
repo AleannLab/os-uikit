@@ -7,9 +7,9 @@ export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ clas
   <div className={classNames('form-check relative', className)}>
     <label className="m-0 inline-flex cursor-pointer items-center text-gray-700">
       <input
-        className="h-4 w-4 !rounded-full border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700"
-        defaultChecked={props.checked}
         ref={ref}
+        className="h-4 w-4 !rounded-full border-gray-300 bg-gray-100 text-blue-600 dark:border-gray-600 dark:bg-gray-700"
+        // defaultChecked={props.checked}
         {...props}
         type="checkbox"
       />
