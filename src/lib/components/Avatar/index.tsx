@@ -37,31 +37,11 @@ const statusClasses: Record<AvatarProps['status'] & string, string> = {
   busy: 'bg-red-400',
 };
 
-const statusPositionValue: Record<AvatarProps['size'] & string, string> = {
-  xs: '1',
-  sm: '1',
-  md: '1',
-  lg: '0',
-  xl: '0',
-};
-
 const statusPositionClasses: Record<AvatarProps['statusPosition'] & string, string[]> = {
-  'top-right': ['-top-', '-right-'],
-  'top-left': ['-top-', '-left-'],
-  'bottom-left': ['-bottom-', '-left-'],
-  'bottom-right': ['-bottom-', '-right-'],
-};
-
-type StatusPosition = 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left';
-
-const getPosition = ({
-  size = 'md',
-  statusPosition = 'top-left',
-}: {
-  size?: keyof typeof statusPositionValue;
-  statusPosition?: StatusPosition;
-}) => {
-  return statusPositionClasses[statusPosition].map((el) => `${el}${statusPositionValue[size]}`);
+  'top-right': ['top-0', 'right-0'],
+  'top-left': ['top-0', 'left-0'],
+  'bottom-left': ['bottom-0', 'left-0'],
+  'bottom-right': ['bottom-0', 'right-0'],
 };
 
 const AvatarComponent: FC<AvatarProps> = ({
@@ -118,7 +98,7 @@ const AvatarComponent: FC<AvatarProps> = ({
               'absolute rounded-full border-2 border-white dark:border-gray-800',
               statusClasses[status],
               statusSizeClasses[size],
-              getPosition({ size, statusPosition }),
+              statusPositionClasses[statusPosition],
             )}
           ></span>
         )}
