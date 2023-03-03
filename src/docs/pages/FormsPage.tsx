@@ -1,5 +1,4 @@
 import { FC, useState } from 'react';
-import { HiMail } from 'react-icons/hi';
 
 import { CodeExample, DemoPage } from './DemoPage';
 import { Button, Checkbox, FileInput, Label, Radio, Select, Textarea, TextInput, ToggleSwitch } from '../../lib';
@@ -136,7 +135,7 @@ const FormsPage: FC = () => {
           <Label className="mb-2 block" htmlFor="email4">
             Your email
           </Label>
-          <TextInput id="email4" type="email" placeholder="name@flowbite.com" required icon={HiMail} />
+          <TextInput id="email4" type="email" placeholder="name@flowbite.com" required />
         </div>
       ),
     },
@@ -163,7 +162,7 @@ const FormsPage: FC = () => {
               id="username"
               placeholder="Bonnie Green"
               required
-              color="green"
+              color="base"
               helperText={
                 <>
                   <span className="font-medium">Alright!</span> Username available!
@@ -179,7 +178,7 @@ const FormsPage: FC = () => {
               id="username4"
               placeholder="Bonnie Green"
               required
-              color="red"
+              color="base"
               helperText={
                 <>
                   <span className="font-medium">Oops!</span> Username already taken!

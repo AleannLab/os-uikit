@@ -66,35 +66,39 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
       ...props
     },
     ref,
-  ) => (
-    <div className={classNames('relative flex flex-col', { 'w-full': full })}>
-      <div className={classNames('relative flex items-center justify-center', { 'w-full': full })}>
-        {iconName && (
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex cursor-pointer items-center pr-4">
-            <Icon type={iconName} className={iconClass ? iconClass : ''} />
-          </div>
-        )}
-        <input
-          ref={ref}
-          className={classNames(
-            'block rounded border text-base font-normal outline-none disabled:cursor-not-allowed disabled:opacity-50',
-            colorClasses[color].input,
-            sizeClasses[sizing],
-            inputBorderClasses[position],
-            { 'w-full': full },
-            {
-              'pr-10': iconName,
-              'shadow-sm dark:shadow-sm-light': shadow,
-            },
-            className,
+  ) => {
+    return (
+      <div className={classNames('relative flex flex-col', { 'w-full': full })}>
+        <div className={classNames('relative flex items-center justify-center', { 'w-full': full })}>
+          {iconName && (
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex cursor-pointer items-center pr-4">
+              <Icon type={iconName} className={iconClass ? iconClass : ''} />
+            </div>
           )}
-          {...props}
-        />
-        {element}
+          <input
+            ref={ref}
+            className={classNames(
+              'block rounded border text-base font-normal outline-none disabled:cursor-not-allowed disabled:opacity-50',
+              colorClasses[color].input,
+              sizeClasses[sizing],
+              inputBorderClasses[position],
+              { 'w-full': full },
+              {
+                'pr-10': iconName,
+                'shadow-sm dark:shadow-sm-light': shadow,
+              },
+              className,
+            )}
+            {...props}
+          />
+          {element}
+        </div>
+        {helperText && (
+          <p className={classNames('absolute -bottom-4 text-xs', color ? colorClasses[color].helperText : '')}>
+            {helperText}
+          </p>
+        )}
       </div>
-      {helperText && (
-        <p className={classNames('absolute -bottom-4 text-xs', colorClasses[color].helperText)}>{helperText}</p>
-      )}
-    </div>
-  ),
+    );
+  },
 );
