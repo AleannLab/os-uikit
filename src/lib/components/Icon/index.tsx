@@ -37,6 +37,8 @@ import {
   Student,
   Tent,
   Trash,
+  AppleIcon,
+  GoogleIcon,
 } from '../Icons/Icons';
 
 const includedIcons = {
@@ -77,6 +79,8 @@ const includedIcons = {
   Student,
   Tent,
   Trash,
+  AppleIcon,
+  GoogleIcon,
 };
 
 export type IconType = keyof typeof includedIcons | string;
