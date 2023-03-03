@@ -8,7 +8,7 @@ import { ModalFooter } from './ModalFooter';
 import { ModalContext } from './ModalContext';
 import windowExists from '../../helpers/window-exists';
 
-type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl';
+type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full';
 type Placement = `${'top' | 'bottom'}-${'left' | 'center' | 'right'}` | `center${'' | '-left' | '-right'}`;
 
 export type ModalProps = PropsWithChildren<{
@@ -33,6 +33,7 @@ const sizeClasses: Record<Size, string> = {
   '5xl': 'max-w-5xl',
   '6xl': 'max-w-6xl',
   '7xl': 'max-w-7xl',
+  full: 'max-w-full',
 };
 
 const placementClasses: Record<Placement, string> = {
@@ -94,16 +95,22 @@ const ModalComponent: FC<ModalProps> = ({
             )}
             data-testid="modal"
           >
-            <div className={classNames('relative h-full w-full', { 'p-4 md:h-auto': indent }, sizeClasses[size])}>
-              <div
-                className={classNames('relative bg-white shadow ', {
-                  'rounded-lg': rounded,
-                  'h-full': !rounded,
-                })}
-              >
-                {children}
+            {size === 'full' ? (
+              <div className={classNames('relative h-full min-h-full w-full', sizeClasses[size])}>
+                <div className={classNames('relative h-full min-h-full bg-white shadow')}>{children}</div>
               </div>
-            </div>
+            ) : (
+              <div className={classNames('relative h-full w-full', { 'p-4 md:h-auto': indent }, sizeClasses[size])}>
+                <div
+                  className={classNames('relative bg-white shadow ', {
+                    'rounded-lg': rounded,
+                    'h-full': !rounded,
+                  })}
+                >
+                  {children}
+                </div>
+              </div>
+            )}
           </div>
         </ModalContext.Provider>,
         container,
