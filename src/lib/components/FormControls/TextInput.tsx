@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode, forwardRef } from 'react';
 import classNames from 'classnames';
 import { Icon } from '../Icon';
+import { InputError } from '../Errors';
 
 type Size = 'sm' | 'md' | 'lg' | 'xs' | 'xl';
 type Color = 'base' | 'dark' | 'transparent';
@@ -19,19 +20,21 @@ export type TextInputProps = ComponentProps<'input'> & {
   element?: ReactNode;
 };
 
-const colorClasses: Record<Color, { input: string; helperText: string }> = {
+const colorClasses: Record<Color, { input: string; borderValid: string; borderError: string }> = {
   base: {
-    input: 'bg-white border-gray-200 text-gray-900 placeholder-gray-700 focus:border-blue-600',
-    helperText: 'text-red-600 dark:text-red-600',
+    input: 'bg-white text-gray-900 placeholder-gray-500',
+    borderValid: 'border-gray-200 focus:border-blue-600',
+    borderError: 'border-red-600',
   },
   dark: {
-    input:
-      'bg-white border-black-200 text-black-900 placeholder-black-700 focus:border-gray-900 focus-visible:border-gray-900',
-    helperText: 'text-red-600 dark:text-red-600',
+    input: 'bg-white text-black-900 placeholder-black-500',
+    borderValid: 'border-black-200 focus:border-gray-900 focus-visible:border-gray-900',
+    borderError: 'border-red-600',
   },
   transparent: {
-    input: 'border-transparent focus:border-transparent focus:ring-0',
-    helperText: '',
+    input: '',
+    borderValid: 'border-transparent focus:border-transparent focus:ring-0',
+    borderError: 'border-red-600',
   },
 };
 
@@ -82,6 +85,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
               colorClasses[color].input,
               sizeClasses[sizing],
               inputBorderClasses[position],
+              helperText ? colorClasses[color].borderError : colorClasses[color].borderValid,
               { 'w-full': full },
               {
                 'pr-10': iconName,
@@ -93,11 +97,7 @@ export const TextInput: any = forwardRef<HTMLInputElement, TextInputProps>(
           />
           {element}
         </div>
-        {helperText && (
-          <p className={classNames('absolute -bottom-4 text-xs', color ? colorClasses[color].helperText : '')}>
-            {helperText}
-          </p>
-        )}
+        {helperText && <InputError>{helperText}</InputError>}
       </div>
     );
   },
