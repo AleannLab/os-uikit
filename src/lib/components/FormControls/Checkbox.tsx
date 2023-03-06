@@ -15,6 +15,6 @@ export const Checkbox: any = forwardRef<HTMLInputElement, CheckboxProps>(({ clas
       />
       <div className="text-body-1 ml-2 mt-0.5 text-neutral-800">{children ? children : props.title}</div>
     </label>
-    {props.tooltip && <p className="absolute -bottom-4 text-xs text-red-600">{props.tooltip}</p>}
+    {props.tooltip && <p className="absolute -bottom-4 mb-1 text-xs text-red-600">{props.tooltip}</p>}
   </div>
 ));
