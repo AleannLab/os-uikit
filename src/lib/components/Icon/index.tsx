@@ -89,6 +89,8 @@ interface IconProps {
   type: IconType;
   className?: string;
   onClick?: () => void;
+  height?: string;
+  width?: string;
   viewheight?: string;
   viewwidth?: string;
 }

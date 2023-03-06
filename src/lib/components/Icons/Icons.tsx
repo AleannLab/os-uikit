@@ -178,7 +178,14 @@ const EyeOpen = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Info = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={22} height={22} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 22}
+    height={props.height ? props.height : 22}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M11.25 11.25H12v5.25h.75" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M11.813 9a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" fill="current" />
