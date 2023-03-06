@@ -3,7 +3,13 @@ import { FC, SVGProps } from 'react';
 type SvgProps = SVGProps<any> & { viewheight: string; viewwidth: string };
 
 const ArrowDown = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={18} height={18} fill={'none'} xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 18}
+    height={props.height ? props.height : 18}
+    fill={'none'}
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M9 2.813v12.374M3.938 10.125 9 15.188l5.063-5.063"
       stroke="current"
@@ -15,7 +21,13 @@ const ArrowDown = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const ArrowUp = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={18} height={18} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 18}
+    height={props.height ? props.height : 18}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M9 15.188V2.812M14.063 7.875 9 2.812 3.937 7.875"
       stroke="current"
@@ -51,7 +63,13 @@ const ArrowRight = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Calendar = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M13 2.5H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5ZM11 1.5v2M5 1.5v2M2.5 5.5h11"
       stroke="current"
@@ -86,7 +104,13 @@ const Camera: FC<SvgProps> = ({ viewheight = '26', viewwidth = '26', ...props })
 );
 
 const Checked = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="m20.25 6.75-10.5 10.5L4.5 12"
       stroke="current"
@@ -98,31 +122,61 @@ const Checked = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const ChevronDown = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="m13 6-5 5-5-5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ChevronUp = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="m3 10 5-5 5 5" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ChevronLeft = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={7} height={10} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 7}
+    height={props.height ? props.height : 10}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M5.75 9.375 1.375 5 5.75.625" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const ChevronRight = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={7} height={10} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 7}
+    height={props.height ? props.height : 10}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M1.368.629 5.75 4.996 1.382 9.38" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
 const Crm = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M4.5 18h15a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5h-15A1.5 1.5 0 0 0 3 6v10.5A1.5 1.5 0 0 0 4.5 18ZM15 21H9M3 14.25h18M12 18v3"
       stroke="current"
@@ -133,7 +187,13 @@ const Crm = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Cross = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="m18.75 5.25-13.5 13.5M18.75 18.75 5.25 5.25"
       stroke="current"
@@ -144,7 +204,13 @@ const Cross = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Dashboard = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M19.125 4.125H4.875a.75.75 0 0 0-.75.75v14.25c0 .414.336.75.75.75h14.25a.75.75 0 0 0 .75-.75V4.875a.75.75 0 0 0-.75-.75ZM12 4.125v15.75M19.875 12H4.125"
       stroke="current"
@@ -193,7 +259,13 @@ const Info = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Itinerary = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M21 5.25H3a.75.75 0 0 0-.75.75v12c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75ZM15.75 15.75h3M11.25 15.75h1.5M2.25 9.084h19.5"
       stroke="current"
@@ -204,7 +276,13 @@ const Itinerary = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Link = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M0 12C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12S0 18.627 0 12Z" fill="current" />
     <path
       d="m9.881 14.119 4.238-4.244M13.063 15.181l-1.77 1.769a3.002 3.002 0 0 1-4.243-4.244l1.769-1.768M15.181 13.063l1.769-1.77a3 3 0 1 0-4.244-4.243l-1.768 1.769"
@@ -235,7 +313,13 @@ const Plus = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const School = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M3 6v7.5M5.081 20.25a8.259 8.259 0 0 1 13.838 0M21 6l-9 3-9-3 9-3 9 3Z"
       stroke="current"
@@ -247,7 +331,13 @@ const School = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Trash = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M17.5 7.5h-11M10.5 10.5v4M13.5 10.5v4M16.5 7.5V17a.5.5 0 0 1-.5.5H8a.5.5 0 0 1-.5-.5V7.5M14.5 7.5v-1a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v1"
       stroke="current"
@@ -259,13 +349,25 @@ const Trash = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const BankCard = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M21 5.25H3a.75.75 0 0 0-.75.75v12c0 .414.336.75.75.75h18a.75.75 0 0 0 .75-.75V6a.75.75 0 0 0-.75-.75ZM15.75 15.75h3M11.25 15.75h1.5M2.25 9.084h19.5" />
   </svg>
 );
 
 const Pinion = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
     <path
       d="M12.338 5.044c.15.215.282.443.393.68l1.619.9c.202.906.204 1.845.006 2.75l-1.625.9a4.607 4.607 0 0 1-.393.682l.03 1.856a6.502 6.502 0 0 1-2.38 1.382l-1.594-.957a5.505 5.505 0 0 1-.788 0l-1.587.95c-.886-.28-1.7-.749-2.388-1.375l.032-1.85a5.006 5.006 0 0 1-.394-.687l-1.619-.9a6.375 6.375 0 0 1-.006-2.75l1.625-.9a4.6 4.6 0 0 1 .394-.681L3.63 3.187a6.5 6.5 0 0 1 2.382-1.38l1.593.955a5.52 5.52 0 0 1 .788 0l1.587-.95c.886.28 1.701.75 2.388 1.375l-.031 1.857Z"
@@ -277,20 +379,38 @@ const Pinion = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Report = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2Z" />
   </svg>
 );
 
 const Student = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M3 6v7.5M5.081 20.25a8.259 8.259 0 0 1 13.838 0M21 6l-9 3-9-3 9-3 9 3Z" />
     <path d="M15.872 7.706a5.25 5.25 0 1 1-7.744 0" />
   </svg>
 );
 
 const Module = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M20.25 4.5H3.75a.75.75 0 0 0-.75.75v13.5c0 .414.336.75.75.75h16.5a.75.75 0 0 0 .75-.75V5.25a.75.75 0 0 0-.75-.75Z"
       stroke="current"
@@ -305,13 +425,25 @@ const Module = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Box = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={24} height={24} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 24}
+    height={props.height ? props.height : 24}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path d="M22 7 12 2 2 7v10l10 5 10-5V7ZM2 7l10 5M12 22V12M22 7l-10 5M17 4.5l-10 5" />
   </svg>
 );
 
 const Filter = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={18} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 18}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M2.29.75h13.42a.625.625 0 0 1 .462 1.047l-5.133 5.648a.61.61 0 0 0-.164.422v4.422a.616.616 0 0 1-.281.524l-2.5 1.664a.625.625 0 0 1-.969-.516V7.867a.61.61 0 0 0-.164-.422L1.828 1.797A.625.625 0 0 1 2.29.75v0Z"
       stroke="current"
@@ -335,7 +467,13 @@ const Magnifier = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Cart = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M11.5 11.5H4.362L2.62 1.912A.5.5 0 0 0 2.13 1.5H1M5 14a1.25 1.25 0 1 0 0-2.5A1.25 1.25 0 0 0 5 14ZM11.5 14a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z"
       stroke="current"
@@ -353,8 +491,8 @@ const Cart = (props: SVGProps<SVGSVGElement>) => (
 
 const Logo = (props: SVGProps<SVGSVGElement>) => (
   <svg
-    width={92}
-    height={27}
+    width={props.width ? props.width : 92}
+    height={props.height ? props.height : 27}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -376,7 +514,13 @@ const Logo = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Snowflake = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M8 4v8M6.5 2.5 8 4l1.5-1.5M6.5 13.5 8 12l1.5 1.5M4.538 6l6.925 4M2.488 6.55 4.538 6l-.55-2.05M12.012 12.05l-.55-2.05 2.05-.55M4.538 10l6.925-4M3.988 12.05l.55-2.05-2.05-.55M13.512 6.55 11.462 6l.55-2.05"
       stroke="current"
@@ -387,7 +531,13 @@ const Snowflake = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Tent = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={16} height={16} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 16}
+    height={props.height ? props.height : 16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M3 8.725V13a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V8.725M3.375 2.5h9.25a.506.506 0 0 1 .481.362L14 6H2l.894-3.138a.506.506 0 0 1 .481-.362v0Z"
       stroke="current"
@@ -404,7 +554,13 @@ const Tent = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const Receipt = (props: SVGProps<SVGSVGElement>) => (
-  <svg width={18} height={14} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 18}
+    height={props.height ? props.height : 14}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5V3a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 8.5V7a.5.5 0 0 1 .5-.5 1.5 1.5 0 0 0 0-3A.5.5 0 0 1 0 3V1.5Zm4 1a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5Zm0 5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7a.5.5 0 0 0-.5.5ZM4 5a1 1 0 0 0 1 1h6a1 1 0 1 0 0-2H5a1 1 0 0 0-1 1Z"
       fill="current"
@@ -425,7 +581,14 @@ const Pen = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const AppleIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 32}
+    height={props.height ? props.height : 32}
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M17.2186 7.48245C17.1252 7.48344 17.0325 7.4665 16.9459 7.4326C16.8592 7.39871 16.7803 7.34852 16.7135 7.2849C16.6468 7.22129 16.5936 7.14549 16.5569 7.06184C16.5202 6.97819 16.5009 6.88833 16.4999 6.79739C16.4999 4.14672 18.7538 2.00006 21.5291 2.00006C21.6226 1.99883 21.7154 2.0156 21.8021 2.04941C21.8889 2.08321 21.968 2.13339 22.0347 2.19705C22.1015 2.26072 22.1548 2.33661 22.1913 2.42037C22.2279 2.50413 22.2471 2.59411 22.2479 2.68513C22.2479 5.33579 19.9958 7.48245 17.2186 7.48245ZM27.7122 21.9136C27.9901 22.1115 28.0802 22.4736 27.923 22.7686C25.3931 27.5957 23.3749 30 21.531 30C20.6724 30 19.8291 29.7349 19.0068 29.2197C18.4167 28.8507 17.7333 28.6478 17.0321 28.6333C16.331 28.6188 15.6393 28.7933 15.0336 29.1376C14.037 29.7069 13.0882 30 12.1874 30C9.47536 30 5 22.035 5 17.6651C5 12.9984 7.56638 9.44058 11.4687 9.44058C13.3048 9.44058 14.8899 9.69818 16.2219 10.2227C16.7854 10.443 17.4237 10.428 17.9738 10.176C19.0547 9.67951 20.4807 9.44058 22.2479 9.44058C24.4079 9.44058 26.292 10.4672 27.856 12.4552C27.9125 12.5269 27.9538 12.6089 27.9772 12.6964C28.0006 12.7839 28.0058 12.8751 27.9924 12.9646C27.979 13.054 27.9473 13.14 27.8992 13.2173C27.851 13.2946 27.7875 13.3617 27.7122 13.4147C25.9662 14.6654 25.1247 16.0672 25.1247 17.6651C25.1247 19.2611 25.9662 20.6648 27.7122 21.9136Z"
       fill="black"
@@ -438,7 +601,14 @@ const AppleIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const GoogleIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg
+    width={props.width ? props.width : 32}
+    height={props.height ? props.height : 32}
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
     <path
       d="M29.074 13.3887H28V13.3334H16V18.6667H23.5353C22.436 21.7714 19.482 24.0001 16 24.0001C11.582 24.0001 7.99999 20.4181 7.99999 16.0001C7.99999 11.5821 11.582 8.00008 16 8.00008C18.0393 8.00008 19.8947 8.76941 21.3073 10.0261L25.0787 6.25475C22.6973 4.03541 19.512 2.66675 16 2.66675C8.63666 2.66675 2.66666 8.63675 2.66666 16.0001C2.66666 23.3634 8.63666 29.3334 16 29.3334C23.3633 29.3334 29.3333 23.3634 29.3333 16.0001C29.3333 15.1061 29.2413 14.2334 29.074 13.3887Z"
       fill="#FFC107"
