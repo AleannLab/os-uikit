@@ -13,7 +13,7 @@ const ButtonsPage: FC = () => {
           <Button>Default</Button>
           <Button color="blue">blue</Button>
           <Button color="gray">gray</Button>
-          <Button color="lightGray">lightGray</Button>
+          <Button color="gray200">lightGray</Button>
           <Button color="lightGreen">lightGreen</Button>
           <Button color="transparent">transparent</Button>
         </div>
@@ -31,7 +31,7 @@ const ButtonsPage: FC = () => {
           <Button color="gray" pill>
             Dark
           </Button>
-          <Button color="lightGray" pill>
+          <Button color="gray200" pill>
             Light
           </Button>
           <Button color="lightGreen" pill>
