@@ -6,7 +6,8 @@ import { Icon } from '../Icon';
 type Color =
   | 'blue'
   | 'gray'
-  | 'lightGray'
+  | 'gray200'
+  | 'gray400'
   | 'lightGreen'
   | 'transparent'
   | 'mainRed'
@@ -35,7 +36,8 @@ export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
 const colorClasses: Record<Color, string> = {
   blue: 'text-white bg-blue-600 hover:bg-blue-800 text-base font-medium disabled:hover:bg-blue-700',
   gray: 'text-black bg-gray-600 hover:bg-gray-800 text-base font-medium disabled:hover:bg-gray-700',
-  lightGray: 'text-blue-600 bg-gray-200 hover:bg-gray-400 text-base font-medium disabled:hover:bg-gray-300',
+  gray200: 'text-white bg-gray-200 hover:bg-gray-300 text-base font-medium disabled:hover:bg-gray-300',
+  gray400: 'text-white bg-gray-400 hover:bg-gray-500 text-base font-medium disabled:hover:bg-gray-500',
   lightGreen: 'text-white bg-green-400 hover:bg-green-500 text-base font-medium disabled:hover:bg-green-500',
   transparent: 'bg-transparent border-none hover:bg-none',
   mainRed: 'text-white bg-fall-700 hover:opacity-90 text-base font-medium disabled:hover:opacity-70',
@@ -48,7 +50,8 @@ const colorClasses: Record<Color, string> = {
 const ringClasses: Record<Color, string> = {
   blue: 'text-blue-600 text-base font-medium bg-white border-blue-600 border-2 hover:bg-blue-600 hover:text-white ',
   gray: 'text-black bg-white border-gray-700 border hover:bg-gray-700 hover:text-white',
-  lightGray: 'text-black bg-white border-gray-400 border hover:bg-gray-200 hover:text-white',
+  gray200: 'text-black bg-white border-gray-200 border hover:bg-gray-300 hover:text-white',
+  gray400: 'text-black bg-white border-gray-400 border hover:bg-gray-500 hover:text-white',
   lightGreen: 'text-black bg-white border-green-400 border hover:bg-green-400 hover:text-white',
   transparent: 'text-black bg-white border-black-700 border hover:bg-black-700 hover:text-white',
   mainRed: 'text-black bg-white border-fall-700 border hover:bg-fall-700 hover:text-white',
