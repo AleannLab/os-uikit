@@ -6,3 +6,4 @@ export * from './TextInput';
 export * from './ToggleSwitch';
 export * from './Radio';
 export * from './Select';
+export * from './PasswordStrengthIndicator';
