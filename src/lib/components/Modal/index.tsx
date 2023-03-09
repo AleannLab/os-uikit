@@ -9,7 +9,8 @@ import { ModalContext } from './ModalContext';
 import windowExists from '../../helpers/window-exists';
 
 type Size = 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl' | '7xl' | 'full';
-type Placement = `${'top' | 'bottom'}-${'left' | 'center' | 'right'}` | `center${'' | '-left' | '-right'}`;
+type Placement = `${'top' | 'bottom'}-${'left' | 'center' | 'right'}` | `center${'' | '-left' | '-right'}` | 'none';
+type Position = 'right' | 'center';
 
 export type ModalProps = PropsWithChildren<{
   onClose?: () => void;
@@ -20,6 +21,8 @@ export type ModalProps = PropsWithChildren<{
   size?: Size;
   rounded?: boolean;
   indent?: boolean;
+  modalId?: string;
+  position?: Position;
 }>;
 
 const sizeClasses: Record<Size, string> = {
@@ -46,7 +49,20 @@ const placementClasses: Record<Placement, string> = {
   'bottom-right': 'items-end justify-end',
   'bottom-center': 'items-end justify-center',
   'bottom-left': 'items-end justify-start',
+  none: '',
 };
+
+const modalPosition: Record<Position, string> = {
+  right: 'flex top-0 right-0 left-0',
+  center: 'block inset-0',
+};
+
+function getModalHeightClass(elementId?: string): string {
+  if (elementId === 'LoginModal') {
+    return 'h-full';
+  }
+  return 'min-h-full';
+}
 
 const ModalComponent: FC<ModalProps> = ({
   children,
@@ -58,6 +74,8 @@ const ModalComponent: FC<ModalProps> = ({
   rounded = true,
   indent = true,
   onClose,
+  modalId = '',
+  position = 'right',
 }): JSX.Element | null => {
   const [container] = useState<HTMLDivElement | undefined>(windowExists() ? document.createElement('div') : undefined);
 
@@ -86,18 +104,19 @@ const ModalComponent: FC<ModalProps> = ({
           <div
             aria-hidden={!show}
             className={classNames(
-              'fixed top-0 right-0 left-0 z-50 h-modal overflow-y-auto overflow-x-hidden md:inset-0 md:h-full',
+              'fixed z-50 overflow-x-hidden overflow-y-scroll',
               placementClasses[placement],
+              modalPosition[position],
               {
-                'flex bg-gray-900 bg-opacity-50 dark:bg-opacity-80': show,
+                'bg-gray-900 bg-opacity-50 dark:bg-opacity-80': show,
                 hidden: !show,
               },
             )}
             data-testid="modal"
           >
             {size === 'full' ? (
-              <div className={classNames('relative h-full min-h-full w-full', sizeClasses[size])}>
-                <div className={classNames('relative h-full min-h-full bg-white shadow')}>{children}</div>
+              <div className={classNames('relative block w-full', getModalHeightClass(modalId))}>
+                <div className={classNames('relative block h-full w-full bg-white shadow')}>{children}</div>
               </div>
             ) : (
               <div className={classNames('relative h-full w-full', { 'p-4 md:h-auto': indent }, sizeClasses[size])}>
