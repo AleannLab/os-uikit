@@ -9,13 +9,6 @@ import { ModalContext } from './ModalContext';
 import windowExists from '../../helpers/window-exists';
 import { ModalProps, placementClasses } from './index.type';
 
-function getModalHeightClass(elementId?: string): string {
-  if (elementId === 'LoginModal') {
-    return 'h-full';
-  }
-  return 'min-h-full';
-}
-
 const ModalFullComponent: FC<ModalProps> = ({
   children,
   root = windowExists() ? document.body : undefined,
@@ -23,7 +16,6 @@ const ModalFullComponent: FC<ModalProps> = ({
   popup,
   placement = 'center',
   onClose,
-  modalId = '',
 }): JSX.Element | null => {
   const [container] = useState<HTMLDivElement | undefined>(windowExists() ? document.createElement('div') : undefined);
 
@@ -61,9 +53,7 @@ const ModalFullComponent: FC<ModalProps> = ({
             )}
             data-testid="modal"
           >
-            <div className={classNames('relative w-full ', getModalHeightClass(modalId))}>
-              <div className={classNames('relative h-full w-full bg-white shadow')}>{children}</div>
-            </div>
+            <div className="h-screen overflow-auto bg-white shadow">{children}</div>
           </div>
         </ModalContext.Provider>,
         container,

@@ -12,7 +12,6 @@ export type ModalProps = PropsWithChildren<{
   size?: Size;
   rounded?: boolean;
   indent?: boolean;
-  modalId?: string;
 }>;
 
 export const sizeClasses: Record<Size, string> = {
