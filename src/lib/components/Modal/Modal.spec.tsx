@@ -1,8 +1,9 @@
 import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
-import { Modal, ModalProps } from '.';
+import { Modal } from '.';
 import { Button } from '../Button';
+import { ModalProps } from './index.type';
 
 describe('Components / Modal', () => {
   describe('when trigger on page is clicked', () => {

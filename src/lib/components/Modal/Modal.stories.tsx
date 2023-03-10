@@ -1,10 +1,11 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import { Modal, ModalProps } from '.';
+import { Modal } from '.';
 import { Button } from '../Button';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
 import { Label, TextInput, Checkbox } from '../FormControls';
+import { ModalProps } from './index.type';
 
 export default {
   title: 'Components/Modal',
