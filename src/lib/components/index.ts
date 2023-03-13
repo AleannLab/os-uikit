@@ -27,3 +27,4 @@ export * from './Toast';
 export * from './Tooltip';
 export * from './Tab';
 export * from './Image';
+export * from './ui';
