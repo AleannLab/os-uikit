@@ -628,6 +628,70 @@ const GoogleIcon = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const SignInIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width={props.width ? props.width : 32}
+    height={props.height ? props.height : 32}
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width={props.width ? props.width : 32} height={props.height ? props.height : 32} rx="16" fill={props.fill ? props.fill : '#D8EDFD'} />
+    <path
+      d="M16 18C18.2091 18 20 16.2091 20 14C20 11.7909 18.2091 10 16 10C13.7909 10 12 11.7909 12 14C12 16.2091 13.7909 18 16 18Z"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeMiterlimit="10"
+    />
+    <path
+      d="M9.9375 21.5001C10.5518 20.4358 11.4355 19.552 12.4997 18.9375C13.5639 18.323 14.7711 17.9995 16 17.9995C17.2289 17.9995 18.4361 18.323 19.5003 18.9375C20.5645 19.552 21.4482 20.4358 22.0625 21.5001"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const CartIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    width={props.width ? props.width : 32}
+    height={props.height ? props.height : 32}
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      width={props.width ? props.width : 32}
+      height={props.height ? props.height : 32}
+      rx="16"
+      fill={props.fill ? props.fill : '#D8EDFD'}
+    />
+    <path
+      d="M19.5 19.5H12.3625L10.6188 9.9125C10.5983 9.79768 10.5385 9.69361 10.4494 9.61828C10.3604 9.54296 10.2479 9.50112 10.1312 9.5H9"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M13 22C13.6904 22 14.25 21.4404 14.25 20.75C14.25 20.0596 13.6904 19.5 13 19.5C12.3096 19.5 11.75 20.0596 11.75 20.75C11.75 21.4404 12.3096 22 13 22Z"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M19.5 22C20.1904 22 20.75 21.4404 20.75 20.75C20.75 20.0596 20.1904 19.5 19.5 19.5C18.8096 19.5 18.25 20.0596 18.25 20.75C18.25 21.4404 18.8096 22 19.5 22Z"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.9062 17H19.7563C19.99 17.0007 20.2165 16.919 20.3959 16.7693C20.5754 16.6195 20.6963 16.4113 20.7375 16.1812L21.5 12H11"
+      stroke={props.stroke ? props.stroke : '#0577D0'}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export {
   ArrowDown,
   ArrowUp,
@@ -668,4 +732,6 @@ export {
   Trash,
   AppleIcon,
   GoogleIcon,
+  SignInIcon,
+  CartIcon,
 };
